@@ -50,26 +50,10 @@ DIARY_RECORD_START("Credits", "Mission Framework")
 <br/>
 Some parts of this framework are based on other Arma 3 frameworks and scripts. See the original authors below.<br/>
 <br/>
- - AI task scripts by Nkenny<br/>
- - AI spawner (originally JEBUS) scripts by DreadPirate<br/>
- - AO limit scripts by Olsen and Starfox64<br/>
+ - MalFramework by Malbryn<br/>
  - Briefing scripts by Perfks and Pax'Jarome<br/>
  - Curator scripts by Commy2<br/>
  - Diary macros by NeilZar<br/>
- - Global AI skill settings by joko // Jonas<br/>
- - JIP teleport scripts by Diwako<br/>
- - Killcam script by Perfk and BlackHawk<br/>
- - Kill tracker script by PabstMirror<br/>
- - LOS and terrain profile tools by BlackHawk<br/>
- - Map cover script by BlackHawk, PIZZADOX and Karel Moricky<br/>
- - Mortar fire script by PabstMirror<br/>
- - ORBAT script by BlackHawk<br/>
- - Parachute script by Kex and cobra4v320<br/>
- - Rearm scripts by GitHawk<br/>
- - Setup timer script by Olsen<br/>
- - Sit down script by RickOShay<br/>
- - Snowfall script by AZCoder and JW<br/>
- - Vehicle respawn scripts by Fredrik Eriksson<br/>
 <br/>
 Special thanks to <font color='#21749c'>Garfield</font> and <font color='#21749c'>kMaN</font> for their technical help.
 </font>
