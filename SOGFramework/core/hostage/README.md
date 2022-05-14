@@ -12,7 +12,7 @@ _The module can also trigger mission complete or mission fail._
 1. _Set up the hostage task_
 2. _Place down the hostage unit(s)_
 3. _Place down an area marker that marks the extraction zone, also give it a unique name_
-4. _Call the `MF_hostage_fnc_makeHostage` function in the hostages' init field that links the unit to the extraction task_
+4. _Call the `SOG_hostage_fnc_makeHostage` function in the hostages' init field that links the unit to the extraction task_
 
 ```
 Arguments:
@@ -20,10 +20,10 @@ Arguments:
     1: STRING - The ID of the task
 
 Example:
-    [this, "t1"] call MF_hostage_fnc_makeHostage
+    [this, "t1"] call SOG_hostage_fnc_makeHostage
 ```
 
-5. _Register the extraction task by calling the `MF_hostage_fnc_registerRescueTask` function in the init field of the task_
+5. _Register the extraction task by calling the `SOG_hostage_fnc_registerRescueTask` function in the init field of the task_
 
 ```
 Arguments:
@@ -35,7 +35,7 @@ Arguments:
     5: BOOLEAN - Should the mission end (MissionFailed) if the task is failed (Optional, default: false)
 
 Example:
-    ["t1", "mrk_extraction", 3, 2, true] call MF_hostage_fnc_registerRescueTask
+    ["t1", "mrk_extraction", 3, 2, true] call SOG_hostage_fnc_registerRescueTask
 ```
 
 ## Config:
@@ -43,4 +43,3 @@ Example:
 
 ## Supported mission type(s):
  - Coop
- - TvT
