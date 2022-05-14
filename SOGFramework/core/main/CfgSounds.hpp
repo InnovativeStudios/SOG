@@ -4,7 +4,7 @@ class CfgSounds {
     sounds[] = {};
 
     class GVARMAIN(TimerBeep) {
-        name = "detector_beep";
+        name = "timer_beep";
         sound[] = { "\SOGFramework\core\ied\sounds\timer_beep.wav", 1, 1, 5 };
         titles[] = { 1, "" };
     };

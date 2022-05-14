@@ -2,23 +2,23 @@
 
 /*
     Author:
-        Malbryn
+        J. Schmidt
 
     Description:
-        Checks the conditions of the hostage rescue task.
+        Checks the conditions of the IED defuse task.
 
     Arguments:
         0: SCALAR - ID of the PFH
-        1: ARRAY - Array of the hostages linked to this task
-        2: STRING - ID of the task
-        3: STRING - Marker name for the extraction zone
-        4: SCALAR - Number of hostages KIA to fail the task
-        5: SCALAR - Number of rescued hostages to complete the task
+        1: ARRAY - Array of the objects linked to this task
+        2: ARRAY - Array of IEDs linked to this task
+        3: STRING - ID of the task
+        4: SCALAR - Number of objects destroyed to fail the task
+        5: SCALAR - Number of IEDs to defuse to complete the task
         6: BOOLEAN - Should the mission end (MissionSuccess) if the task is successful (Optional, default: false)
         7: BOOLEAN - Should the mission end (MissionFailed) if the task is failed (Optional, default: false)
 
     Example:
-        [2, [pow1, pow2], "t2", "mrk_extraction", 3, 2, true] call MF_hostage_fnc_checkTaskConditions
+        [2, [obj1, obj2, obj3], [ied1, ied2, ied3], 2, 3, true] call SOG_ied_fnc_checkTaskConditions
 
     Returns:
         void
@@ -26,10 +26,10 @@
 
 if !(isServer) exitWith {};
 
-params ["_handle", "_hostages", "_taskID", "_extZone", "_limitFail", "_limitSuccess", ["_endSuccess", false], ["_endFail", false]];
+params ["_handle", "_objects", "_ieds", "_taskID", "_limitFail", "_limitSuccess", ["_endSuccess", false], ["_endFail", false]];
 
-// Check the death count
-if ({!alive _x} count _hostages >= _limitFail) exitWith {
+// Check the destroyed objects count
+if ({!alive _x} count _objects >= _limitFail) exitWith {
     [_taskID, "FAILED"] call BFUNC(taskSetState);
 
     // Stop PFH
@@ -41,17 +41,22 @@ if ({!alive _x} count _hostages >= _limitFail) exitWith {
     };
 };
 
-// If the task is done, we don't check the zone anymore to save performance
-// However we still track the death of the hostages
+// If the task is done, we don't check the ieds anymore to save performance
+// However we still track the death of the objects
 if (_taskID call BFUNC(taskState) == "SUCCEEDED") exitWith {};
 
-// Count the hostages inside the extraction zone
-private _count = {
-    _x inArea _extZone;
-} count _hostages;
+// Count the objects
+private _countObjects = {
+  alive _x;
+} count _objects;
 
-// Check the success limit
-if (_count >= _limitSuccess) then {
+// Count the IEDs
+private _countIEDs = {
+  !alive _x;
+} count _ieds;
+
+// Check the object count and the IEDs defused count
+if (_countObjects > _limitFail && _countIEDs >= _limitSuccess) then {
     [_taskID, "SUCCEEDED"] call BFUNC(taskSetState);
 
     // End the mission if it was enabled

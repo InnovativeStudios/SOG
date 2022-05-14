@@ -24,6 +24,18 @@ class GVARMAIN(Common) {
     serverInit = PATH_POST_SERVER(common);
 };
 
+class GVARMAIN(EndConditions) {
+    init = PATH_POST(end_conditions);
+    clientInit = PATH_POST_CLIENT(end_conditions);
+    serverInit = PATH_POST_SERVER(end_conditions);
+};
+
+class GVARMAIN(EndMission) {
+    init = PATH_POST(end_mission);
+    clientInit = PATH_POST_CLIENT(end_mission);
+    serverInit = PATH_POST_SERVER(end_mission);
+};
+
 class GVARMAIN(Hostage) {
     init = PATH_POST(hostage);
     clientInit = PATH_POST_CLIENT(hostage);

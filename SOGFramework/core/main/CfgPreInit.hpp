@@ -16,6 +16,14 @@ class GVARMAIN(Common) {
     init = PATH_PRE(common);
 };
 
+class GVARMAIN(EndConditions) {
+    init = PATH_PRE(end_conditions);
+};
+
+class GVARMAIN(EndMission) {
+    init = PATH_PRE(end_mission);
+};
+
 class GVARMAIN(Hostage) {
     init = PATH_PRE(hostage);
 };

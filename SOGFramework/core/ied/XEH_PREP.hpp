@@ -1,3 +1,4 @@
 PREP(checkTaskConditions);
 PREP(makeIED);
-PREP(registerDiffuseTask);
+PREP(makeObject);
+PREP(registerDefuseTask);

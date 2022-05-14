@@ -11,31 +11,42 @@ _The module can also trigger mission complete or mission fail._
 ## Usage:
 1. _Set up the ied task_
 2. _Place down the ied object(s)_
-3. _Place down an area marker that marks the extraction zone, also give it a unique name_
-4. _Call the `SOG_ied_fnc_makeIED` function in the ieds' init field that links the unit to the extraction task_
+3. _Place down the object(s)_
+4. _Spawn the `SOG_ied_fnc_makeIED` function in the ieds' init field that links the ied to the diffuse task_
 
 ```
 Arguments:
-    0: OBJECT - The AI unit
+    0: OBJECT - The IED object
+    1: STRING - The ID of the task
+    2: NUMBER - The Countdown Timer
+
+Example:
+    [this, "t2", 30] spawn SOG_ied_fnc_makeIED
+```
+
+5. _Call the `SOG_ied_fnc_makeObject` function in the objects' init field that links the object to the diffuse task_
+
+```
+Arguments:
+    0: OBJECT - The Object
     1: STRING - The ID of the task
 
 Example:
-    [this, "t1"] call SOG_ied_fnc_makeIED
+    [this, "t2"] call SOG_ied_fnc_makeObject
 ```
 
-5. _Register the extraction task by calling the `SOG_ied_fnc_registerDiffuseTask` function in the init field of the task_
+6. _Register the diffuse task by calling the `SOG_ied_fnc_registerDiffuseTask` function in the init field of the task_
 
 ```
 Arguments:
     0: STRING - ID of the task
-    1: STRING - Marker name for the extraction zone
-    2: SCALAR - Number of ieds KIA to fail the task
-    3: SCALAR - Number of rescued ieds to complete the task
+    2: SCALAR - Number of objects destroyed to fail the task
+    3: SCALAR - Number of ieds to defuse to complete the task
     4: BOOLEAN - Should the mission end (MissionSuccess) if the task is successful (Optional, default: false)
     5: BOOLEAN - Should the mission end (MissionFailed) if the task is failed (Optional, default: false)
 
 Example:
-    ["t1", "mrk_extraction", 3, 2, true] call SOG_ied_fnc_registerDiffuseTask
+    ["t2", 2, 3, true] call SOG_ied_fnc_registerDiffuseTask
 ```
 
 ## Config:
