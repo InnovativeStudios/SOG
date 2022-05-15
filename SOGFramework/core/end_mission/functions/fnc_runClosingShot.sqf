@@ -77,11 +77,11 @@ private _layerEnd = "BIS_fnc_endMission_end" call BFUNC(rscLayer);
                         uiNamespace setVariable ["ace_common_ctrlProgressBar", controlNull];
 
                         // Open dialog
-                        createDialog "MF_EndScreen";
+                        /* createDialog "MF_EndScreen"; */
 
                         // Logging
                         private _time = [CBA_missionTime] call BFUNC(secondsToString);
-                        
+
                         [COMPONENT_STR, "INFO", format [
                             "Ending mission... (Ending: %1 | Victory: %2 | Mission time: %3)", _this#3, _this#4, _time
                         ]] call EFUNC(main,log);
@@ -93,4 +93,3 @@ private _layerEnd = "BIS_fnc_endMission_end" call BFUNC(rscLayer);
         }, _this, 0.3] call CFUNC(waitAndExecute);
     }, _this, 0.4] call CFUNC(waitAndExecute);
 }, [_layerInterlacing, _layerStatic, _layerEnd, _ending, _isWin], 0.2] call CFUNC(waitAndExecute);
-

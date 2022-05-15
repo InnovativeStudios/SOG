@@ -12,3 +12,4 @@ ADDON = true;
 
 // Init global variables
 GVAR(allHostages) = [];
+GVAR(allShooters) = [];
