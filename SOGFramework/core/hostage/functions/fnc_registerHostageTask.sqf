@@ -25,7 +25,7 @@
 
 if !(isServer) exitWith {};
 
-params [["_taskID", ""], ["_extZone", ""], ["_limitFail", -1], ["_limitSuccess", -1], ["_time", -1], ["_type", [["_timeLimit", false], ["_cbrn", false], ["_hostage", false]]], ["_endSuccess", false], ["_endFail", false]];
+params [["_taskID", ""], ["_extZone", ""], ["_limitFail", -1], ["_limitSuccess", -1], ["_time", -1], ["_type", [["_timeLimit", false], ["_capture", false], ["_cbrn", false], ["_hostage", false]]], ["_endSuccess", false], ["_endFail", false]];
 
 // Add a PFH to each task
 // Delay the PFH until mission start so every hostage is initialised
@@ -47,15 +47,27 @@ params [["_taskID", ""], ["_extZone", ""], ["_limitFail", -1], ["_limitSuccess",
         ], true, 0] call EFUNC(main,log);
     };
 
+    if (_limitSuccess > count GVAR(allHVTs)) then {
+        [COMPONENT_STR, "WARNING", format [
+            "Required number of hvts to rescue (set to %1) is higher than the hvt count (current: %2)", _limitSuccess, count GVAR(allHVTs)
+        ], true, 0] call EFUNC(main,log);
+    };
+
     // Get the hostages
     private _hostages = GVAR(allHostages) select {GETVAR(_x,GVAR(assignedTask),"") == _taskID};
 
+    // Get the hvts
+    private _hvts = GVAR(allHVTs) select {GETVAR(_x,GVAR(assignedTask),"") == _taskID};
+
+    // Get the shooters
+    private _shooters = GVAR(allShooters) select {GETVAR(_x,GVAR(assignedTask),"") == _taskID};
+
     // PFH
     private _handle = [{
-        _this#0 params ["_hostages", "_shooters", "_taskID", "_extZone", "_limitFail", "_limitSuccess", "_time", "_type", "_endSuccess", "_endFail"];
+        _this#0 params ["_hostages", "_hvts", "_shooters", "_taskID", "_extZone", "_limitFail", "_limitSuccess", "_time", "_type", "_endSuccess", "_endFail"];
         _this#1 params ["_handle"];
 
         // Check function
-        [_handle, _hostages, _shooters, _taskID, _extZone, _limitFail, _limitSuccess, _time, _type, _endSuccess, _endFail] spawn FUNC(checkTaskConditions);
-    }, 3, [_hostages, _shooters, _taskID, _extZone, _limitFail, _limitSuccess, _time, _type, _endSuccess, _endFail]] spawn CFUNC(addPerFrameHandler);
+        [_handle, _hostages, _hvts, _shooters, _taskID, _extZone, _limitFail, _limitSuccess, _time, _type, _endSuccess, _endFail] spawn FUNC(checkTaskConditions);
+    }, 3, [_hostages, _hvts, _shooters, _taskID, _extZone, _limitFail, _limitSuccess, _time, _type, _endSuccess, _endFail]] spawn CFUNC(addPerFrameHandler);
 }, [_taskID, _extZone, _limitFail, _limitSuccess, _time, _type, _endSuccess, _endFail]] spawn CFUNC(addEventHandlerArgs);

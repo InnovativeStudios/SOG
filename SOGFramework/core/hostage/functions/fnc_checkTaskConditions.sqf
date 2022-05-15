@@ -19,7 +19,7 @@
         7: BOOLEAN - Should the mission end (MissionFailed) if the task is failed (Optional, default: false)
 
     Example:
-        [2, [pow1, pow2], "t2", "mrk_extraction", 3, 2, 30, true, false, [true, true, false]] call MF_hostage_fnc_checkTaskConditions
+        [2, [pow1, pow2], [hvt1, hvt2], "t2", "mrk_extraction", 3, 2, 30, true, false, [true, false, true, false]] call MF_hostage_fnc_checkTaskConditions
 
     Returns:
         void
@@ -27,15 +27,16 @@
 
 if !(isServer) exitWith {};
 
-params ["_handle", "_hostages", "_shooters", "_taskID", "_extZone", "_limitFail", "_limitSuccess", "_time", ["_type", [["_timeLimit", false], ["_cbrn", false], ["_hostage", false]]], ["_endSuccess", false], ["_endFail", false]];
+params ["_handle", "_hostages", "_hvts", "_shooters", "_taskID", "_extZone", "_limitFail", "_limitSuccess", "_time", ["_type", [["_timeLimit", false], ["_capture", false], ["_cbrn", false], ["_hostage", false]]], ["_endSuccess", false], ["_endFail", false]];
 
 private _nearPlayers = [];
-private _timeLimit = _this select 8 select 0;
-private _cbrn = _this select 8 select 1;
-private _hostage = _this select 8 select 2;
+private _timeLimit = _this select 9 select 0;
+private _capture = _this select 9 select 1;
+private _cbrn = _this select 9 select 2;
+private _hostage = _this select 9 select 3;
 
 // Check the death count
-if ({!alive _x} count _hostages >= _limitFail) exitWith {
+if ({!alive _x} count _hostages >= _limitFail || {!alive _x} count _hvts >= _limitFail) exitWith {
     [_taskID, "FAILED"] call BFUNC(taskSetState);
 
     // Stop PFH
@@ -47,13 +48,27 @@ if ({!alive _x} count _hostages >= _limitFail) exitWith {
     };
 };
 
+// Check if Capture Hostage and Time Limit
+if (_timeLimit && _capture) then {
+  while {_time > 0} do {
+    _time = _time - 1;
+    sleep 1;
+
+    if (_hvts findIf {!([_x] call AFUNC(captives,isHandcuffed))} < 0) exitWith {};
+
+    if (_time <= 0) exitWith {
+      { _x deleteVehicle } forEach _hvts
+    }
+  }
+};
+
 // Check if CBRN Attack and Time Limit
 if (_timeLimit && _cbrn) then {
   while {_time > 0} do {
     _time = _time - 1;
     sleep 1;
 
-    if (_time <= 0) then {
+    if (_time <= 0) exitWith {
       { _x setDamage 0.9 } forEach _hostages;
       { _x playMove "acts_executionvictim_kill_end" } forEach _hostages;
 
@@ -62,27 +77,27 @@ if (_timeLimit && _cbrn) then {
       { _x setDamage 1 } forEach _hostages
     }
   }
-} else {
-  // Check if Hostage Rescue and Time Limit
-  if (_timeLimit && _hostage) then {
-    while {_time > 0} do {
-      _time = _time - 1;
-      sleep 1;
+};
 
-      if (_time <= 0) then {
-        { _x playMove "acts_executioner_kill_end" } forEach _shooters;
+// Check if Hostage Rescue and Time Limit
+if (_timeLimit && _hostage) then {
+  while {_time > 0} do {
+    _time = _time - 1;
+    sleep 1;
 
-        sleep 2;
+    if (_time <= 0) exitWith {
+      { _x playMove "acts_executioner_kill_end" } forEach _shooters;
 
-        playSound "sn_flare_weapon_fired";
-        { _x playMove "acts_executioner_standingloop" } forEach _shooters;
-        { _x setDamage 0.9 } forEach _hostages;
-        { _x playMove "acts_executionvictim_kill_end" } forEach _hostages;
+      sleep 2;
 
-        sleep 2.75;
+      playSound "sn_flare_weapon_fired";
+      { _x playMove "acts_executioner_standingloop" } forEach _shooters;
+      { _x setDamage 0.9 } forEach _hostages;
+      { _x playMove "acts_executionvictim_kill_end" } forEach _hostages;
 
-        { _x setDamage 1 } forEach _hostages
-      }
+      sleep 2.75;
+
+      { _x setDamage 1 } forEach _hostages
     }
   }
 };
@@ -92,12 +107,17 @@ if (_timeLimit && _cbrn) then {
 if (_taskID call BFUNC(taskState) == "SUCCEEDED") exitWith {};
 
 // Count the hostages inside the extraction zone
-private _count = {
+private _countHostages = {
     _x inArea _extZone;
 } count _hostages;
 
+// Count the hvts inside the extraction zone
+private _countHVTs = {
+    _x inArea _extZone;
+} count _hvts;
+
 // Check the success limit
-if (_count >= _limitSuccess) then {
+if (_countHostages >= _limitSuccess || _countHVTs >= _limitSuccess) then {
     [_taskID, "SUCCEEDED"] call BFUNC(taskSetState);
 
     // End the mission if it was enabled
