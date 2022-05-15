@@ -4,7 +4,7 @@ _This module adds support for ied tasks/missions._
 
 _The mission maker can define ied objects, the framework will monitor the status of those objects._
 
-_An extraction area and a threshold can be set, so the given amount of hostages have to be in the extraction zone in order to complete the task._
+_A threshold can be set, so the given amount of IEDs have to be defused, and the number of objects that need to survive in order to complete the task._
 
 _The module can also trigger mission complete or mission fail._
 
@@ -12,7 +12,7 @@ _The module can also trigger mission complete or mission fail._
 1. _Set up the ied task_
 2. _Place down the ied object(s)_
 3. _Place down the object(s)_
-4. _Spawn the `SOG_ied_fnc_makeIED` function in the ieds' init field that links the ied to the diffuse task_
+4. _Spawn the `MF_ied_fnc_makeIED` function in the ieds' init field that links the ied to the defuse task_
 
 ```
 Arguments:
@@ -21,10 +21,10 @@ Arguments:
     2: NUMBER - The Countdown Timer
 
 Example:
-    [this, "t2", 30] spawn SOG_ied_fnc_makeIED
+    [this, "t2", 30] spawn MF_ied_fnc_makeIED
 ```
 
-5. _Call the `SOG_ied_fnc_makeObject` function in the objects' init field that links the object to the diffuse task_
+5. _Call the `MF_ied_fnc_makeObject` function in the objects' init field that links the object to the defuse task_
 
 ```
 Arguments:
@@ -32,10 +32,10 @@ Arguments:
     1: STRING - The ID of the task
 
 Example:
-    [this, "t2"] call SOG_ied_fnc_makeObject
+    [this, "t2"] call MF_ied_fnc_makeObject
 ```
 
-6. _Register the diffuse task by calling the `SOG_ied_fnc_registerDiffuseTask` function in the init field of the task_
+6. _Register the defuse task by calling the `MF_ied_fnc_registerDefuseTask` function in the init field of the task_
 
 ```
 Arguments:
@@ -46,7 +46,7 @@ Arguments:
     5: BOOLEAN - Should the mission end (MissionFailed) if the task is failed (Optional, default: false)
 
 Example:
-    ["t2", 2, 3, true] call SOG_ied_fnc_registerDiffuseTask
+    ["t2", 2, 3, true] call MF_ied_fnc_registerDefuseTask
 ```
 
 ## Config:

@@ -2,6 +2,7 @@
 
 /*
     Author:
+        Malbryn
         J. Schmidt
 
     Description:
@@ -12,7 +13,7 @@
         1: STRING - The ID of the task
 
     Example:
-        [this, "t2"] call SOG_ied_fnc_makeObject
+        [this, "t2"] call MF_ied_fnc_makeObject
 
     Returns:
         void

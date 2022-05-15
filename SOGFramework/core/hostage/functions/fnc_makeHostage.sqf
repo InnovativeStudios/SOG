@@ -12,7 +12,7 @@
         1: STRING - The ID of the task
 
     Example:
-        [this, "t1"] call MF_hostage_fnc_makeHostage
+        [this, "t1"] call SOG_hostage_fnc_makeHostage
 
     Returns:
         void

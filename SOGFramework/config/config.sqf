@@ -42,7 +42,7 @@ GVARMAIN(moduleHostage) = true;  // Coop
 
 
 // IED
-GVARMAIN(moduleIED) = false;  // Coop
+GVARMAIN(moduleIED) = true;  // Coop
 
 
 // Intel

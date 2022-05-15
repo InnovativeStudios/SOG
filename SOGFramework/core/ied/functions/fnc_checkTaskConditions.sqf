@@ -2,6 +2,7 @@
 
 /*
     Author:
+        Malbryn
         J. Schmidt
 
     Description:
@@ -18,7 +19,7 @@
         7: BOOLEAN - Should the mission end (MissionFailed) if the task is failed (Optional, default: false)
 
     Example:
-        [2, [obj1, obj2, obj3], [ied1, ied2, ied3], 2, 3, true] call SOG_ied_fnc_checkTaskConditions
+        [2, [obj1, obj2, obj3], [ied1, ied2, ied3], 2, 3, true] call MF_ied_fnc_checkTaskConditions
 
     Returns:
         void
@@ -26,7 +27,7 @@
 
 if !(isServer) exitWith {};
 
-params ["_handle", "_objects", "_ieds", "_taskID", "_limitFail", "_limitSuccess", ["_endSuccess", false], ["_endFail", false]];
+params ["_handle", "_ieds", "_objects", "_taskID", "_limitFail", "_limitSuccess", ["_endSuccess", false], ["_endFail", false]];
 
 // Check the destroyed objects count
 if ({!alive _x} count _objects >= _limitFail) exitWith {
@@ -42,21 +43,16 @@ if ({!alive _x} count _objects >= _limitFail) exitWith {
 };
 
 // If the task is done, we don't check the ieds anymore to save performance
-// However we still track the death of the objects
+// However we still track the number of the objects
 if (_taskID call BFUNC(taskState) == "SUCCEEDED") exitWith {};
 
 // Count the objects
-private _countObjects = {
-  alive _x;
+private _count = {
+    !alive _x;
 } count _objects;
 
-// Count the IEDs
-private _countIEDs = {
-  !alive _x;
-} count _ieds;
-
-// Check the object count and the IEDs defused count
-if (_countObjects > _limitFail && _countIEDs >= _limitSuccess) then {
+// Check the success limit
+if (EGVAR(main,defusedCount) >= _limitSuccess && _count < _limitFail) then {
     [_taskID, "SUCCEEDED"] call BFUNC(taskSetState);
 
     // End the mission if it was enabled

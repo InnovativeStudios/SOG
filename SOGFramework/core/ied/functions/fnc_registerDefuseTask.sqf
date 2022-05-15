@@ -2,6 +2,7 @@
 
 /*
     Author:
+        Malbryn
         J. Schmidt
 
     Description:
@@ -15,7 +16,7 @@
         4: BOOLEAN - Should the mission end (MissionFailed) if the task is failed (Optional, default: false)
 
     Example:
-        ["t2", 2, 3, true] call SOG_ied_fnc_registerDiffuseTask
+        ["t2", 2, 3, true] call MF_ied_fnc_registerDiffuseTask
 
     Returns:
         void
@@ -35,15 +36,15 @@ params [["_taskID", ""], ["_limitFail", -1], ["_limitSuccess", -1], ["_endSucces
         [COMPONENT_STR, "DEBUG", format ["Task (%1) does not exist", _taskID], true, 0] call EFUNC(main,log);
     };
 
-    if (_limitSuccess > count GVAR(allIEDs)) then {
-        [COMPONENT_STR, "WARNING", format [
-            "Required number of ieds to defuse (set to %1) is higher than the ied count (current: %2)", _limitSuccess, count GVAR(allIEDs)
-        ], true, 0] call EFUNC(main,log);
-    };
-
     if (_limitFail > count GVAR(allObjects)) then {
         [COMPONENT_STR, "WARNING", format [
             "Required number of objects to survive (set to %1) is higher than the object count (current: %2)", _limitFail, count GVAR(allObjects)
+        ], true, 0] call EFUNC(main,log);
+    };
+
+    if (_limitSuccess > count GVAR(allIEDs)) then {
+        [COMPONENT_STR, "WARNING", format [
+            "Required number of IEDs to defuse (set to %1) is higher than the ied count (current: %2)", _limitSuccess, count GVAR(allIEDs)
         ], true, 0] call EFUNC(main,log);
     };
 
