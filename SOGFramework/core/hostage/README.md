@@ -23,7 +23,7 @@ Example:
     [this, "t1"] call SOG_hostage_fnc_makeHostage
 ```
 
-5. _Register the extraction task by calling the `SOG_hostage_fnc_registerRescueTask` function in the init field of the task_
+5. _Register the extraction task by calling the `SOG_hostage_fnc_registerHostageTask` function in the init field of the task_
 
 ```
 Arguments:
@@ -31,11 +31,18 @@ Arguments:
     1: STRING - Marker name for the extraction zone
     2: SCALAR - Number of hostages KIA to fail the task
     3: SCALAR - Number of rescued hostages to complete the task
-    4: BOOLEAN - Should the mission end (MissionSuccess) if the task is successful (Optional, default: false)
-    5: BOOLEAN - Should the mission end (MissionFailed) if the task is failed (Optional, default: false)
+    4: SCALAR - Number of seconds before hostages are killed ** timeLimit must be set to true **
+    5: BOOLEAN - Should the mission end (MissionSuccess) if the task is successful (Optional, default: false)
+    6: BOOLEAN - Should the mission end (MissionFailed) if the task is failed (Optional, default: false)
+    7: BOOLEAN - Does the task have a time limit (Optional, default: false)
+    8: ARRAY - Array of task types to select and set task to (Optional, default: [false, false])
+      - Type of tasks:
+        - CBRN
+        - Hostage
 
 Example:
-    ["t1", "mrk_extraction", 3, 2, true] call SOG_hostage_fnc_registerRescueTask
+    ["t2", "mrk_extraction", 3, 2, true] call SOG_hostage_fnc_registerRescueTask
+    ["t2", "mrk_extraction", 3, 2, 45, true, false, true, [true, false]] call SOG_hostage_fnc_registerRescueTask
 ```
 
 ## Config:

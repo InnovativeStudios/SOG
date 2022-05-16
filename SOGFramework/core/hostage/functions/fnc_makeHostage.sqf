@@ -42,10 +42,9 @@ if (_index == -1) then {
 
 // Animation Loop
 if (alive _unit) then {
-  // Initial Unit Setup
-  _unit enableAIFeature ["MOVE", false];
   _unit setCaptive true;
-  _unit switchMove "acts_executionvictim_loop";
+  _unit enableAIFeature ["MOVE", false];
+  _unit playMove "acts_executionvictim_loop";
 
   waitUntil {
     sleep 1;
@@ -57,7 +56,7 @@ if (alive _unit) then {
 
   [_unit] joinSilent (group _nearPlayer);
 
-  _unit enableAIFeature ["MOVE", true];
   _unit setCaptive false;
+  _unit enableAIFeature ["MOVE", true];
   _unit playMove "acts_executionvictim_unbow";
 }

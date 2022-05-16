@@ -26,7 +26,10 @@ if (isNull _unit) exitWith {[COMPONENT_STR, "ERROR", "Unit is not found", true] 
 if (_taskID == "") exitWith {[COMPONENT_STR, "ERROR", "Task ID is empty", true] call EFUNC(main,log)};
 
 // Animation Loop
-_unit switchMove "acts_executioner_standingloop";
+if (alive _unit) then {
+  _unit enableAIFeature ["MOVE", false];
+  _unit playMove "AidlPercMstpSrasWrflDnon_G01";
+};
 
 // Register hostage
 SETVAR(_unit,GVAR(assignedTask),_taskID);
