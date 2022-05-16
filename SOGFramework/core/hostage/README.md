@@ -23,7 +23,18 @@ Example:
     [this, "t1"] call SOG_hostage_fnc_makeHostage
 ```
 
-5. _Register the extraction task by calling the `SOG_hostage_fnc_registerHostageTask` function in the init field of the task_
+5. _Call the `SOG_hostage_fnc_makeShooter` function in the shooters' init field that links the unit to the extraction task_
+
+```
+Arguments:
+    0: OBJECT - The AI unit
+    1: STRING - The ID of the task
+
+Example:
+    [this, "t1"] call SOG_hostage_fnc_makeShooter
+```
+
+6. _Register the extraction task by calling the `SOG_hostage_fnc_registerHostageTask` function in the init field of the task_
 
 ```
 Arguments:
