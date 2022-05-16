@@ -11,8 +11,9 @@ _The module can also trigger mission complete or mission fail._
 ## Usage:
 1. _Set up the hostage task_
 2. _Place down the hostage unit(s)_
-3. _Place down an area marker that marks the extraction zone, also give it a unique name_
-4. _Call the `SOG_hostage_fnc_makeHostage` function in the hostages' init field that links the unit to the hostage task_
+3. _Place down the shooter unit(s) (Optional)_
+4. _Place down an area marker that marks the extraction zone, also give it a unique name_
+5. _Call the `SOG_hostage_fnc_makeHostage` function in the hostages' init field that links the unit to the hostage task_
 
 ```
 Arguments:
@@ -20,10 +21,10 @@ Arguments:
     1: STRING - The ID of the task
 
 Example:
-    [this, "t1"] call SOG_hostage_fnc_makeHostage
+    [this, "task_name"] call SOG_hostage_fnc_makeHostage
 ```
 
-5. _Call the `SOG_hostage_fnc_makeShooter` function in the shooters' init field that links the unit to the hostage task_
+6. _Call the `SOG_hostage_fnc_makeShooter` function in the shooters' init field that links the unit to the hostage task (Optional, **Shooter Unit(s) Must Be Placed**)_
 
 ```
 Arguments:
@@ -31,10 +32,10 @@ Arguments:
     1: STRING - The ID of the task
 
 Example:
-    [this, "t1"] call SOG_hostage_fnc_makeShooter
+    [this, "task_name"] call SOG_hostage_fnc_makeShooter
 ```
 
-6. _Register the hostage task by calling the `SOG_hostage_fnc_registerHostageTask` function in the init field of the task_
+7. _Register the hostage task by calling the `SOG_hostage_fnc_registerHostageTask` function in the init field of the task_
 
 ```
 Arguments:
@@ -46,11 +47,17 @@ Arguments:
     6: BOOLEAN - Should the mission end (MissionFailed) if the task is failed (Optional, default: false)
     8: ARRAY - Array of task types to select from (Optional, default: [false, false])
     7: BOOLEAN - Does the task have a time limit (Optional, default: false)
-    4: TIME - Number of seconds before hostages are killed (Optional , default: 45) ** timeLimit Must Be Enabled **
+    4: TIME - Number of seconds before hostages are killed (Optional, default: 45) ** timeLimit Must Be Enabled **
 
 Example:
-    ["task_name", "marker_name", 1, 2, true] call SOG_hostage_fnc_registerHostageTask
+    // Default No Time Limit
+    ["task_name", "marker_name", 1, 2, false] call SOG_hostage_fnc_registerHostageTask
+
+    // CBRN Attack When Time Limit Expires
     ["task_name", "marker_name", 1, 2, false, false, [true, false], true, 45] call SOG_hostage_fnc_registerHostageTask
+
+    // Execution When Time Expires
+    ["task_name", "marker_name", 1, 2, false, false, [false, true], true, 45] call SOG_hostage_fnc_registerHostageTask
 ```
 
 ## Config:
