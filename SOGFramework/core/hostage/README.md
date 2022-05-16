@@ -12,7 +12,7 @@ _The module can also trigger mission complete or mission fail._
 1. _Set up the hostage task_
 2. _Place down the hostage unit(s)_
 3. _Place down an area marker that marks the extraction zone, also give it a unique name_
-4. _Call the `SOG_hostage_fnc_makeHostage` function in the hostages' init field that links the unit to the extraction task_
+4. _Call the `SOG_hostage_fnc_makeHostage` function in the hostages' init field that links the unit to the hostage task_
 
 ```
 Arguments:
@@ -23,7 +23,7 @@ Example:
     [this, "t1"] call SOG_hostage_fnc_makeHostage
 ```
 
-5. _Call the `SOG_hostage_fnc_makeShooter` function in the shooters' init field that links the unit to the extraction task_
+5. _Call the `SOG_hostage_fnc_makeShooter` function in the shooters' init field that links the unit to the hostage task_
 
 ```
 Arguments:
