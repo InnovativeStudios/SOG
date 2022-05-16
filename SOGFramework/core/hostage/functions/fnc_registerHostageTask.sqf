@@ -63,6 +63,6 @@ params [["_taskID", ""], ["_extZone", ""], ["_limitFail", -1], ["_limitSuccess",
         _this#1 params ["_handle"];
 
         // Check function
-        [_handle, _hostages, _shooters, _taskID, _extZone, _limitFail, _limitSuccess, _time, _endSuccess, _endFail, _timeLimit, _type] spawn FUNC(checkHostageTaskConditions);
+        [_handle, _hostages, _shooters, _taskID, _extZone, _limitFail, _limitSuccess, _time, _endSuccess, _endFail, _timeLimit, _type] spawn FUNC(checkTaskConditions);
     }, 3, [_hostages, _shooters, _taskID, _extZone, _limitFail, _limitSuccess, _time, _endSuccess, _endFail, _timeLimit, _type]] spawn CFUNC(addPerFrameHandler);
 }, [_taskID, _extZone, _limitFail, _limitSuccess, _time, _endSuccess, _endFail, _timeLimit, _type]] spawn CFUNC(addEventHandlerArgs);

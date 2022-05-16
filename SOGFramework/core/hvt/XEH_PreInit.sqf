@@ -11,5 +11,4 @@ PREP_RECOMPILE_END;
 ADDON = true;
 
 // Init global variables
-GVAR(allHostages) = [];
-GVAR(allShooters) = [];
+GVAR(allHVTs) = [];
