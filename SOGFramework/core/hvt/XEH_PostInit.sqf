@@ -1,3 +1,3 @@
 #include "script_component.hpp"
 
-if !(GVARMAIN(moduleHostage)) exitWith {};
+if !(GVARMAIN(moduleHVT)) exitWith {};

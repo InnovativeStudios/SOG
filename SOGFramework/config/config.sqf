@@ -37,8 +37,16 @@ EGVAR(custom_channel,channelName) = "JTAC channel";  // Name of the channel
 EGVAR(custom_channel,channelColour) = [0.8, 0, 0.5, 1];  // Colour of the channel (RGBA format, default: FK pink)
 
 
+// Destroy
+GVARMAIN(moduleDestroy) = true;  // Coop
+
+
 // Hostage
 GVARMAIN(moduleHostage) = true;  // Coop
+
+
+// HVT
+GVARMAIN(moduleHVT) = true;  // Coop
 
 
 // IED

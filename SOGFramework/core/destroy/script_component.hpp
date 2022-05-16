@@ -1,5 +1,5 @@
-#define COMPONENT hvt
-#define COMPONENT_STR QUOTE(HVT)
+#define COMPONENT destroy
+#define COMPONENT_STR QUOTE(Destroy)
 
 // #define DEBUG_MODE_FULL
 // #define DISABLE_COMPILE_CACHE
