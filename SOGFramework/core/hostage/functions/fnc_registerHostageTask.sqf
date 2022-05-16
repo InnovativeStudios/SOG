@@ -29,12 +29,12 @@
 
 if !(isServer) exitWith {};
 
-params [["_taskID", ""], ["_extZone", ""], ["_limitFail", -1], ["_limitSuccess", -1], ["_time", -1], ["_endSuccess", false], ["_endFail", false], ["_timeLimit", false], ["_type", [["_cbrn", false], ["_hostage", false]]]];
+params [["_taskID", ""], ["_extZone", ""], ["_limitFail", -1], ["_limitSuccess", -1], ["_endSuccess", false], ["_endFail", false], ["_type", [["_cbrn", false], ["_hostage", false]]], ["_timeLimit", false], ["_time", 45]];
 
 // Add a PFH to each task
 // Delay the PFH until mission start so every hostage is initialised
 [QGVARMAIN(initFramework), {
-    _thisArgs params ["_taskID", "_extZone", "_limitFail", "_limitSuccess", "_time", "_endSuccess", "_endFail", "_timeLimit", "_type"];
+    _thisArgs params ["_taskID", "_extZone", "_limitFail", "_limitSuccess", "_endSuccess", "_endFail", "_type", "_timeLimit", "_time"];
 
     // Check stuff
     if (getMarkerType _extZone == "") then {
@@ -59,10 +59,10 @@ params [["_taskID", ""], ["_extZone", ""], ["_limitFail", -1], ["_limitSuccess",
 
     // PFH
     private _handle = [{
-        _this#0 params ["_hostages", "_shooters", "_taskID", "_extZone", "_limitFail", "_limitSuccess", "_time", "_endSuccess", "_endFail", "_timeLimit", "_type"];
+        _this#0 params ["_hostages", "_shooters", "_taskID", "_extZone", "_limitFail", "_limitSuccess", "_endSuccess", "_endFail", "_type", "_timeLimit", "_time"];
         _this#1 params ["_handle"];
 
         // Check function
-        [_handle, _hostages, _shooters, _taskID, _extZone, _limitFail, _limitSuccess, _time, _endSuccess, _endFail, _timeLimit, _type] spawn FUNC(checkTaskConditions);
-    }, 3, [_hostages, _shooters, _taskID, _extZone, _limitFail, _limitSuccess, _time, _endSuccess, _endFail, _timeLimit, _type]] spawn CFUNC(addPerFrameHandler);
-}, [_taskID, _extZone, _limitFail, _limitSuccess, _time, _endSuccess, _endFail, _timeLimit, _type]] spawn CFUNC(addEventHandlerArgs);
+        [_handle, _hostages, _shooters, _taskID, _extZone, _limitFail, _limitSuccess, _endSuccess, _endFail, _type, _timeLimit, _time] spawn FUNC(checkTaskConditions);
+    }, 3, [_hostages, _shooters, _taskID, _extZone, _limitFail, _limitSuccess, _endSuccess, _endFail, _type, _timeLimit, _time]] spawn CFUNC(addPerFrameHandler);
+}, [_taskID, _extZone, _limitFail, _limitSuccess, _endSuccess, _endFail, _type, _timeLimit, _time]] spawn CFUNC(addEventHandlerArgs);

@@ -15,15 +15,15 @@
         3: STRING - Marker name for the extraction zone
         4: SCALAR - Number of hvts KIA to fail the task
         5: SCALAR - Number of captured hvts to complete the task
-        6: SCALAR - Number of seconds before hvts die to fail the task ** timeLimit must be set to true **
         7: BOOLEAN - Should the mission end (MissionSuccess) if the task is successful (Optional, default: false)
         8: BOOLEAN - Should the mission end (MissionFailed) if the task is failed (Optional, default: false)
-        9: BOOLEAN - Does the task have a time limit (Optional, default: false)
-        10: ARRAY - Array of task type to select from (Optional, default: false)
+        9: ARRAY - Array of task type to select from (Required, default: [true, false])
+        10: BOOLEAN - Does the task have a time limit (Optional, default: false)
+        11: TIME - Number of seconds before hvts die to fail the task ** timeLimit must be set to true **
 
 
     Example:
-        [2, [hvt1, hvt2], "t2", "mrk_extraction", 1, 2, 30, true] call MF_hostage_fnc_checkTaskConditions
+        [1, [hvt1, hvt2], "t1", "mrk_extraction", 1, 2, false, false, [true, false]] call MF_hvt_fnc_checkTaskConditions
 
     Returns:
         void
@@ -31,11 +31,11 @@
 
 if !(isServer) exitWith {};
 
-params ["_handle", "_hvts", "_taskID", "_extZone", "_limitFail", "_limitSuccess", "_time", ["_endSuccess", false], ["_endFail", false], ["_timeLimit", false], ["_type", [["_capture", false], ["_eliminate", false]]]];
+params ["_handle", "_hvts", "_taskID", "_extZone", "_limitFail", "_limitSuccess", ["_endSuccess", false], ["_endFail", false], ["_type", [["_capture", true], ["_eliminate", false]]], ["_timeLimit", false], "_time"];
 
 private _nearPlayers = [];
-private _capture = _this select 12 select 0;
-private _eliminate = _this select 12 select 1;
+private _capture = _this select 8 select 0;
+private _eliminate = _this select 8 select 1;
 
 // Check if Time Limit
 if (_timeLimit) then {

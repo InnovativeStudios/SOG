@@ -15,16 +15,16 @@
         3: STRING - ID of the task
         4: STRING - Marker name for the extraction zone
         5: SCALAR - Number of hostages KIA to fail the task
-        6: SCALAR - Number of rescued hostages to complete the task
-        7: SCALAR - Number of seconds before hostages die to fail the task ** timeLimit must be set to true **
-        8: BOOLEAN - Should the mission end (MissionSuccess) if the task is successful (Optional, default: false)
-        9: BOOLEAN - Should the mission end (MissionFailed) if the task is failed (Optional, default: false)
+        6: SCALAR - Number of hostages rescued to complete the task
+        7: BOOLEAN - Should the mission end (MissionSuccess) if the task is successful (Optional, default: false)
+        8: BOOLEAN - Should the mission end (MissionFailed) if the task is failed (Optional, default: false)
+        9: ARRAY - Array of task type to select from (Optional, default: [false, false])
         10: BOOLEAN - Does the task have a time limit (Optional, default: false)
-        11: ARRAY - Array of task type to select from (Optional, default: false)
+        11: TIME - Number of seconds before hostages die to fail the task (Optional, default: 45) ** timeLimit Must Be Enabled **
 
 
     Example:
-        [2, [pow1, pow2], [hvt1, hvt2], [shooter1, shooter2], "t2", "mrk_extraction", 1, 2, 30, true] call MF_hostage_fnc_checkTaskConditions
+        [1, [pow1, pow2], [shooter1, shooter2], "t1", "mrk_extraction", 1, 2, true] call MF_hostage_fnc_checkTaskConditions
 
     Returns:
         void
@@ -32,11 +32,11 @@
 
 if !(isServer) exitWith {};
 
-params ["_handle", "_hostages", "_shooters", "_taskID", "_extZone", "_limitFail", "_limitSuccess", "_time", ["_endSuccess", false], ["_endFail", false], ["_timeLimit", false], ["_type", [["_cbrn", false], ["_hostage", false]]]];
+params ["_handle", "_hostages", "_shooters", "_taskID", "_extZone", "_limitFail", "_limitSuccess", ["_endSuccess", false], ["_endFail", false], ["_type", [["_cbrn", false], ["_hostage", false]]], ["_timeLimit", false], "_time"];
 
 private _nearPlayers = [];
-private _cbrn = _this select 11 select 0;
-private _hostage = _this select 11 select 1;
+private _cbrn = _this select 9 select 0;
+private _hostage = _this select 9 select 1;
 
 // Check the death count
 if ({!alive _x} count _hostages >= _limitFail) exitWith {
