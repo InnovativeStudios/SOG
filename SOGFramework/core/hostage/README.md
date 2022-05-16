@@ -24,7 +24,7 @@ Example:
     [this, "task_name"] call SOG_hostage_fnc_makeHostage
 ```
 
-6. _Call the `SOG_hostage_fnc_makeShooter` function in the shooters' init field that links the unit to the hostage task (Optional, **Shooter Unit(s) Must Be Placed**)_
+6. _Call the `SOG_hostage_fnc_makeShooter` function in the shooters' init field that links the unit to the hostage task (Optional, ** Shooter Unit(s) Must Be Placed **)_
 
 ```
 Arguments:
