@@ -40,7 +40,7 @@ private _cbrn = _this select 9 select 0;
 private _hostage = _this select 9 select 1;
 
 // Check the death count
-if ({!alive _x} count _hostages >= _limitFail) exitWith {
+if ({ !alive _x } count _hostages >= _limitFail) exitWith {
     [_taskID, "FAILED"] call BFUNC(taskSetState);
 
     // Stop PFH
@@ -52,11 +52,15 @@ if ({!alive _x} count _hostages >= _limitFail) exitWith {
     };
 };
 
+// If the task is done, we don't check the zone anymore to save performance
+// However we still track the death of the hostages
+if (_taskID call BFUNC(taskState) == "SUCCEEDED") exitWith {};
+
 // Check if Time Limit
 if (_timeLimit) then {
   // Check if type CBRN
   if (_cbrn) then {
-    while {_time > 0} do {
+    while { _time > 0 } do {
       _time = _time - 1;
       sleep 1;
 
@@ -73,30 +77,24 @@ if (_timeLimit) then {
 
   // Check if type Hostage
   if (_hostage) then {
-    while {_time > 0} do {
+    while { _time > 0 } do {
       _time = _time - 1;
       sleep 1;
 
-      if (_time <= 0 && { alive _x } count _hostages > 0) exitWith {
-        { _x setCaptive false } forEach _hostages;
+      if (_time <= 0) exitWith {
         { _x enableAIFeature ["MOVE", true] } forEach _shooters;
         { _x playMove "" } forEach _shooters;
+
+        sleep 1;
+
+        { _x setCaptive false } forEach _hostages;
       };
     };
   };
 };
 
-// If the task is done, we don't check the zone anymore to save performance
-// However we still track the death of the hostages or hvts
-if (_taskID call BFUNC(taskState) == "SUCCEEDED") exitWith {};
-
-// Count the hostages inside the extraction zone
-private _count = {
-    _x inArea _extZone;
-} count _hostages;
-
 // Check the success limit
-if (_count >= _limitSuccess) then {
+if ({ _x inArea _extZone } count _hostages >= _limitSuccess) exitWith {
     [_taskID, "SUCCEEDED"] call BFUNC(taskSetState);
 
     // End the mission if it was enabled

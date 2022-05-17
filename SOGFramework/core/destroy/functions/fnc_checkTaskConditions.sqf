@@ -34,9 +34,28 @@ params ["_handle", "_targets", "_taskID", "_limitFail", "_limitSuccess", ["_endS
 
 // Check if Time Limit
 if (_timeLimit) then {
-  while {_time > 0} do {
+  while { _time > 0 } do {
     _time = _time - 1;
     sleep 1;
+
+    // Check if Time has exceeded and targets KIA
+    if (_time <= 0 && { alive _x } count _targets >= _limitFail) exitWith {
+      [_taskID, "FAILED"] call BFUNC(taskSetState);
+
+      // Stop PFH
+      [_handle] call CFUNC(removePerFrameHandler);
+
+      // End the mission if it was enabled
+      if (_endFail) then {
+          [QEGVAR(end_mission,callMission), ["MissionFail", true, playerSide]] call CFUNC(serverEvent);
+      };
+
+      // Remove targets
+      { deleteVehicle _x } forEach _targets;
+    };
+
+    // If the task is failed, we don't check the task anymore to save performance
+    if (_taskID call BFUNC(taskState) == "FAILED") exitWith {};
 
     // Check the success limit
     if ({ !alive _x } count _targets >= _limitSuccess) exitWith {
@@ -47,26 +66,10 @@ if (_timeLimit) then {
           [QEGVAR(end_mission,callMission), ["MissionSuccess", true, playerSide]] call CFUNC(serverEvent);
       };
     };
-
-    // Check if Time has exceeded and targets KIA
-    if (_time <= 0 && { alive _x } count _targets >= _limitFail) exitWith {
-      [_taskID, "FAILED"] call BFUNC(taskSetState);
-
-      // End the mission if it was enabled
-      if (_endFail) then {
-          [QEGVAR(end_mission,callMission), ["MissionFail", true, playerSide]] call CFUNC(serverEvent);
-      };
-
-      // Remove targets
-      { deleteVehicle _x } forEach _targets;
-    };
   };
 } else {
-  // If the task is done, we don't check the task anymore to save performance
-  if (_taskID call BFUNC(taskState) == "SUCCEEDED") exitWith {};
-
   // Check the success limit
-  if ({ !alive _x } count _targets >= _limitSuccess) then {
+  if ({ !alive _x } count _targets >= _limitSuccess) exitWith {
     [_taskID, "SUCCEEDED"] call BFUNC(taskSetState);
 
     // End the mission if it was enabled

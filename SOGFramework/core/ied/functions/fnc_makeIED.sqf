@@ -40,7 +40,7 @@ if (_index == -1) then {
 };
 
 // Countdown Timer
-while {(_time > 0) && alive _ied} do {
+while { (_time > 0) && alive _ied } do {
   _time = _time -1;
   sleep 1;
 

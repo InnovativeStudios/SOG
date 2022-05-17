@@ -12,25 +12,25 @@
         0: STRING - ID of the task
         1: STRING - Marker name for the extraction zone
         2: SCALAR - Number of hvts KIA or escaped to fail the task
-        3: SCALAR - Number of captured or eliminated hvts to complete the task
-        4: BOOLEAN - Should the mission end (MissionSuccess) if the task is successful (Optional, default: false)
-        5: BOOLEAN - Should the mission end (MissionFailed) if the task is failed (Optional, default: false)
-        6: ARRAY - Array of task types to select from (Optional, default: [true, false])
+        3: SCALAR - Number of hvts caputred or eliminated to complete the task
+        5: BOOLEAN - Should the mission end (MissionSuccess) if the task is successful (Optional, default: false)
+        6: BOOLEAN - Should the mission end (MissionFailed) if the task is failed (Optional, default: false)
+        8: ARRAY - Array of task types to select and set task to (Optional, default: [false, true])
         7: BOOLEAN - Does the task have a time limit (Optional, default: false)
-        8: TIME - Number of seconds before hvts escape (Optional, default: 45) ** timeLimit Must Be Enabled **
+        4: SCALAR - Number of seconds before hvts are killed (Optional, default: 45) ** timeLimit Must Be Enabled **
 
     Example:
-        // Capture No Time Limit
-        ["task_name", "marker_name", 1, 2, false, false, [true, false]] call MF_hostage_fnc_registerHvtTask
+        // Capture HVT No Time Limit
+        ["task_name", "marker_name", 1, 2, false, false, [true, false]] call MF_hvt_fnc_registerHvtTask
 
-        // Eliminate No Time Limit
-        ["task_name", "marker_name", 1, 2, false, false, [false, true]] call MF_hostage_fnc_registerHvtTask
+        // Eliminate HVT No Time Limit
+        ["task_name", "marker_name", 1, 2, false, false, [false, true]] call MF_hvt_fnc_registerHvtTask
 
-        // Capture Within Time Limit
-        ["task_name", "marker_name", 1, 2, false, false, [true, false], true, 45] call MF_hostage_fnc_registerHvtTask
+        // Capture HVT Within Time Limit
+        ["task_name", "marker_name", 1, 2, false, false, [true, false], true, 45] call MF_hvt_fnc_registerHvtTask
 
-        // Eliminate Within Time Limit
-        ["task_name", "marker_name", 1, 2, false, false, [false, true], true, 45] call MF_hostage_fnc_registerHvtTask
+        // Eliminate HVT Within Time Limit
+        ["task_name", "marker_name", 1, 2, false, false, [false, true], true, 45] call MF_hvt_fnc_registerHvtTask
 
     Returns:
         void
@@ -38,10 +38,10 @@
 
 if !(isServer) exitWith {};
 
-params [["_taskID", ""], ["_extZone", ""], ["_limitFail", -1], ["_limitSuccess", -1], ["_endSuccess", false], ["_endFail", false], ["_type", ["_capture", true], ["_eliminate", false]], ["_timeLimit", false], ["_time", 45]];
+params [["_taskID", ""], ["_extZone", ""], ["_limitFail", -1], ["_limitSuccess", -1], ["_endSuccess", false], ["_endFail", false], ["_type", [["_capture", false], ["_eliminate", true]]], ["_timeLimit", false], ["_time", 45]];
 
 // Add a PFH to each task
-// Delay the PFH until mission start so every hostage is initialised
+// Delay the PFH until mission start so every hvt is initialised
 [QGVARMAIN(initFramework), {
     _thisArgs params ["_taskID", "_extZone", "_limitFail", "_limitSuccess", "_endSuccess", "_endFail", "_type", "_timeLimit", "_time"];
 

@@ -30,7 +30,7 @@ if !(isServer) exitWith {};
 params ["_handle", "_ieds", "_objects", "_taskID", "_limitFail", "_limitSuccess", ["_endSuccess", false], ["_endFail", false]];
 
 // Check the destroyed objects count
-if ({!alive _x} count _objects >= _limitFail) exitWith {
+if ({ !alive _x } count _objects >= _limitFail) exitWith {
     [_taskID, "FAILED"] call BFUNC(taskSetState);
 
     // Stop PFH
@@ -46,13 +46,8 @@ if ({!alive _x} count _objects >= _limitFail) exitWith {
 // However we still track the number of the objects
 if (_taskID call BFUNC(taskState) == "SUCCEEDED") exitWith {};
 
-// Count the objects
-private _count = {
-    !alive _x;
-} count _objects;
-
 // Check the success limit
-if (EGVAR(main,defusedCount) >= _limitSuccess && _count < _limitFail) then {
+if (EGVAR(main,defusedCount) >= _limitSuccess && { !alive _x } count _objects < _limitFail) then {
     [_taskID, "SUCCEEDED"] call BFUNC(taskSetState);
 
     // End the mission if it was enabled
