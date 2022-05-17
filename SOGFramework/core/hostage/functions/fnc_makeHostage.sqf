@@ -13,7 +13,7 @@
         1: STRING - The ID of the task
 
     Example:
-        [this, "t1"] spawn MF_hostage_fnc_makeHostage
+        [this, "task_name"] spawn MF_hostage_fnc_makeHostage
 
     Returns:
         void

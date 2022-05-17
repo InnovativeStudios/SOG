@@ -13,15 +13,21 @@
         1: STRING - Marker name for the extraction zone
         2: SCALAR - Number of hostages KIA to fail the task
         3: SCALAR - Number of rescued hostages to complete the task
-        4: SCALAR - Number of seconds before hostages are killed ** timeLimit must be set to true **
         5: BOOLEAN - Should the mission end (MissionSuccess) if the task is successful (Optional, default: false)
         6: BOOLEAN - Should the mission end (MissionFailed) if the task is failed (Optional, default: false)
-        7: BOOLEAN - Does the task have a time limit (Optional, default: false)
         8: ARRAY - Array of task types to select and set task to (Optional, default: [false, false])
+        7: BOOLEAN - Does the task have a time limit (Optional, default: false)
+        4: SCALAR - Number of seconds before hostages are killed (Optional, default: 45) ** timeLimit Must Be Enabled **
 
     Example:
-        ["t2", "mrk_extraction", 3, 2, true] call MF_hostage_fnc_registerRescueTask
-        ["t2", "mrk_extraction", 3, 2, 45, true, false, true, [true, false]] call MF_hostage_fnc_registerRescueTask
+        // Default No Time Limit
+        ["task_name", "marker_name", 1, 2, false] call MF_hostage_fnc_registerHostageTask
+
+        // CBRN Attack When Time Limit Expires
+        ["task_name", "marker_name", 1, 2, false, false, [true, false], true, 45] call MF_hostage_fnc_registerHostageTask
+
+        // Execution When Time Limit Expires
+        ["task_name", "marker_name", 1, 2, false, false, [false, true], true, 45] call MF_hostage_fnc_registerHostageTask
 
     Returns:
         void

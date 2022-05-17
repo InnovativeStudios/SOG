@@ -46,7 +46,8 @@ Arguments:
     5: BOOLEAN - Should the mission end (MissionFailed) if the task is failed (Optional, default: false)
 
 Example:
-    ["t2", 2, 3, true] call SOG_ied_fnc_registerDefuseTask
+    // Default
+    ["task_name", 2, 3, true] call SOG_ied_fnc_registerDefuseTask
 ```
 
 ## Config:

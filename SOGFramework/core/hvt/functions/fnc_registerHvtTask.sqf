@@ -15,9 +15,9 @@
         3: SCALAR - Number of captured or eliminated hvts to complete the task
         4: BOOLEAN - Should the mission end (MissionSuccess) if the task is successful (Optional, default: false)
         5: BOOLEAN - Should the mission end (MissionFailed) if the task is failed (Optional, default: false)
-        6: ARRAY - Array of task types to select from (Required, default: [true, false])
-        7: BOOLEAN - Should the mission have a time limit (Optional, default: false)
-        8: TIME - Number of seconds before hvts escape to fail the mission (Optional, default: 45) ** timeLimit Must Be Enabled **
+        6: ARRAY - Array of task types to select from (Optional, default: [true, false])
+        7: BOOLEAN - Does the task have a time limit (Optional, default: false)
+        8: TIME - Number of seconds before hvts escape (Optional, default: 45) ** timeLimit Must Be Enabled **
 
     Example:
         // Capture No Time Limit

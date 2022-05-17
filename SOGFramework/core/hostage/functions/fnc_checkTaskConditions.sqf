@@ -24,7 +24,8 @@
 
 
     Example:
-        [1, [pow1, pow2], [shooter1, shooter2], "t1", "mrk_extraction", 1, 2, true] call MF_hostage_fnc_checkTaskConditions
+        // Default No Time Limit
+        [1, [pow1, pow2], "t1", "mrk_extraction", 1, 2, false] call MF_hostage_fnc_checkTaskConditions
 
     Returns:
         void

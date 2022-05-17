@@ -56,7 +56,7 @@ Example:
     // CBRN Attack When Time Limit Expires
     ["task_name", "marker_name", 1, 2, false, false, [true, false], true, 45] call SOG_hostage_fnc_registerHostageTask
 
-    // Execution When Time Expires
+    // Execution When Time Limit Expires
     ["task_name", "marker_name", 1, 2, false, false, [false, true], true, 45] call SOG_hostage_fnc_registerHostageTask
 ```
 

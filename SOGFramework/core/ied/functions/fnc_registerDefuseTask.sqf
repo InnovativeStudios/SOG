@@ -16,7 +16,7 @@
         4: BOOLEAN - Should the mission end (MissionFailed) if the task is failed (Optional, default: false)
 
     Example:
-        ["t2", 2, 3, true] call MF_ied_fnc_registerDiffuseTask
+        ["task_name", 2, 3, false] call MF_ied_fnc_registerDiffuseTask
 
     Returns:
         void

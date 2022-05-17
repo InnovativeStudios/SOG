@@ -16,6 +16,10 @@ class GVARMAIN(Common) {
     init = PATH_PRE(common);
 };
 
+class GVARMAIN(Destroy) {
+    init = PATH_PRE(destroy);
+};
+
 class GVARMAIN(EndConditions) {
     init = PATH_PRE(end_conditions);
 };
@@ -26,6 +30,10 @@ class GVARMAIN(EndMission) {
 
 class GVARMAIN(Hostage) {
     init = PATH_PRE(hostage);
+};
+
+class GVARMAIN(HVT) {
+    init = PATH_PRE(hvt);
 };
 
 class GVARMAIN(IED) {

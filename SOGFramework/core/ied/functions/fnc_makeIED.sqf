@@ -14,7 +14,7 @@
         2: Number - The Countdown Timer
 
     Example:
-        [this, "t2", 30] spawn MF_ied_fnc_makeIED
+        [this, "task_name", 30] spawn MF_ied_fnc_makeIED
 
     Returns:
         void

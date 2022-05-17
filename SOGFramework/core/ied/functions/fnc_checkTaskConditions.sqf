@@ -6,7 +6,7 @@
         J. Schmidt
 
     Description:
-        Checks the conditions of the IED defuse task.
+        Checks the conditions of the IED task.
 
     Arguments:
         0: SCALAR - ID of the PFH

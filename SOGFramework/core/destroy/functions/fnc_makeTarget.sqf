@@ -13,7 +13,7 @@
         1: STRING - The ID of the task
 
     Example:
-        [this, "t1"] call MF_destroy_fnc_makeTarget
+        [this, "task_name"] call MF_destroy_fnc_makeTarget
 
     Returns:
         void

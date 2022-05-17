@@ -20,7 +20,7 @@ Arguments:
     1: STRING - The ID of the task
 
 Example:
-    [this, "t1"] call SOG_hvt_fnc_makeHVT
+    [this, "task_name"] call SOG_hvt_fnc_makeHVT
 ```
 
 5. _Register the hvt task by calling the `SOG_hvt_fnc_registerHvtTask` function in the init field of the task_
@@ -39,16 +39,16 @@ Arguments:
 
 Example:
     // Capture No Time Limit
-    ["task_name", "marker_name", 1, 2, false, false, [true, false]] call MF_hostage_fnc_registerHvtTask
+    ["task_name", "marker_name", 1, 2, false, false, [true, false]] call SOG_hostage_fnc_registerHvtTask
 
     // Eliminate No Time Limit
-    ["task_name", "marker_name", 1, 2, false, false, [false, true]] call MF_hostage_fnc_registerHvtTask
+    ["task_name", "marker_name", 1, 2, false, false, [false, true]] call SOG_hostage_fnc_registerHvtTask
 
     // Capture Within Time Limit
-    ["task_name", "marker_name", 1, 2, false, false, [true, false], true, 45] call MF_hostage_fnc_registerHvtTask
+    ["task_name", "marker_name", 1, 2, false, false, [true, false], true, 45] call SOG_hostage_fnc_registerHvtTask
 
     // Eliminate Within Time Limit
-    ["task_name", "marker_name", 1, 2, false, false, [false, true], true, 45] call MF_hostage_fnc_registerHvtTask
+    ["task_name", "marker_name", 1, 2, false, false, [false, true], true, 45] call SOG_hostage_fnc_registerHvtTask
 ```
 
 ## Config:
