@@ -21,7 +21,7 @@ Arguments:
     2: NUMBER - The Countdown Timer
 
 Example:
-    [this, "t2", 30] spawn SOG_ied_fnc_makeIED
+    [this, "task_name", 30] spawn SOG_ied_fnc_makeIED
 ```
 
 5. _Call the `SOG_ied_fnc_makeObject` function in the objects' init field that links the object to the defuse task_
@@ -32,7 +32,7 @@ Arguments:
     1: STRING - The ID of the task
 
 Example:
-    [this, "t2"] call SOG_ied_fnc_makeObject
+    [this, "task_name"] call SOG_ied_fnc_makeObject
 ```
 
 6. _Register the defuse task by calling the `SOG_ied_fnc_registerDefuseTask` function in the init field of the task_
