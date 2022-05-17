@@ -12,6 +12,12 @@ class GVARMAIN(ACRE) {
     serverInit = PATH_POST_SERVER(acre);
 };
 
+class GVARMAIN(Attack) {
+    init = PATH_POST(attack);
+    clientInit = PATH_POST_CLIENT(attack);
+    serverInit = PATH_POST_SERVER(attack);
+};
+
 class GVARMAIN(Briefing) {
     init = PATH_POST(briefing);
     clientInit = PATH_POST_CLIENT(briefing);

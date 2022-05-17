@@ -27,6 +27,10 @@ GVARMAIN(moduleACRE) = false;  // Coop
 EGVAR(acre,useBabel) = false;  // TvT
 
 
+// Attack
+GVARMAIN(moduleAttack) = true;  // Coop
+
+
 // Briefing
 GVARMAIN(moduleBriefing) = false;  // Coop
 

@@ -8,6 +8,10 @@ class GVARMAIN(ACRE) {
     init = PATH_PRE(acre);
 };
 
+class GVARMAIN(Attack) {
+    init = PATH_PRE(attack);
+};
+
 class GVARMAIN(Briefing) {
     init = PATH_PRE(briefing);
 };
