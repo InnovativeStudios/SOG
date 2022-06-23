@@ -21,7 +21,7 @@ interface Link {
 const links: Link[] = [
 	{ name: 'Home', href: '/' },
 	{ name: 'Blog', href: '/blog' },
-	{ name: 'Wiki', href: '/wiki' }
+	{ name: 'Knowledge Base', href: '/knowledgebase' }
 ]
 </script>
 

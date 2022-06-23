@@ -11,7 +11,10 @@ export default defineNuxtConfig({
     },
     highlight: { theme: 'dracula-soft' }
   },
-  css: ['@/assets/css/tailwind.css','@/assets/fontawesome/css/all.css'],
+  css: ['@/assets/css/tailwind.css', '@/assets/fontawesome/css/all.min.css'],
+  head: {
+    script: ['@/assets/js/all.min.js']
+  },
   modules: ['@nuxt/content'],
   postcss: {
     plugins: {
