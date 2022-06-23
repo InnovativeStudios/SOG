@@ -3,8 +3,8 @@
 		<header class="container mx-auto">
 			<nav class="flex justify-center sm:justify-end items-center h-20 px-4">
 					<ul class="flex items-center space-x-4">
-						<li v-for="(n, i) in links" :key="`navLink-${i}`">
-							<NuxtLink class="nav-link text-white" :to="n.link">{{ n.name }}</NuxtLink>
+						<li v-for="(n, i) in links" :key="`navLink-${String(i)}`">
+							<NuxtLink class="nav-link text-white" :to="n.href">{{ n.name }}</NuxtLink>
 						</li>
 					</ul>
 			</nav>
@@ -12,20 +12,16 @@
 	</div>
 </template>
 
-<script setup>
-const links = [
-	{
-		name: 'Home',
-		link: '/'
-	},
-	{
-		name: 'Blog',
-		link: '/blog'
-	},
-	{
-		name: 'Wiki',
-		link: '/wiki'
-	}
+<script setup lang="ts">
+interface Link {
+	name: string,
+	href: string
+}
+
+const links: Link[] = [
+	{ name: 'Home', href: '/' },
+	{ name: 'Blog', href: '/blog' },
+	{ name: 'Wiki', href: '/wiki' }
 ]
 </script>
 
