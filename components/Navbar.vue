@@ -6,16 +6,13 @@
 						<li v-for="(n, i) in links" :key="`navLink-${i}`">
 							<NuxtLink class="nav-link text-white" :to="n.link">{{ n.name }}</NuxtLink>
 						</li>
-						<li>
-							<a href="https://github.com/users/InnovativeStudios/projects/3/views/1" class="nav-link">Project Board</a>
-						</li>
 					</ul>
 			</nav>
 		</header>
 	</div>
 </template>
 
-<script setup lang="ts">
+<script setup>
 const links = [
 	{
 		name: 'Home',

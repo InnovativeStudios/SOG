@@ -72,6 +72,10 @@ const wikiNav = [
 	{
 		title: 'Wiki Loadouts',
 		link: '/wiki/loadout'
+	},
+	{
+		title: 'Project Board',
+		link: 'https://github.com/users/InnovativeStudios/projects/3/views/1'
 	}
 ]
 useHead ({
