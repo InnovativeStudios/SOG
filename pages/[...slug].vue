@@ -34,7 +34,7 @@
 	</div>
 </template>
 
-<script setup lang="ts">
+<script setup>
 definePageMeta ({
   layout: false
 });
@@ -49,7 +49,7 @@ const toc = computed(() => {
 	if (!items) return [];
 	const toc = [];
 	const tags = ["h2", "h3", "h4", "h5", "h6"];
-	items.forEach((item: any) => {
+	items.forEach((item) => {
 		if (tags.includes(item.tag)) {
 			toc.push({
 				id: item.props.id,
