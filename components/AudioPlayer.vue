@@ -6,7 +6,7 @@
 				<img class="rounded-full max-h-[4em] max-w-[4em]" :src="song.image" alt="...">
 				<div class="absolute flex justify-center items-center w-full h-full">
 					<!-- <button class="toggle-btn" @click="togglePrevious"><i class="fa-solid fa-backward-step fa-2xl"></i></button> -->
-					<button class="toggle-btn" @click="togglePlay"><i class="fa-solid fa-2xl" :class="{'fa-play': !isPlaying, 'fa-pause': isPlaying}"></i></button>
+					<button class="toggle-btn" @click="togglePlay"><i class="fas fa-2x" :class="{'fa-play': !isPlaying, 'fa-pause': isPlaying}"></i></button>
 					<!-- <button class="toggle-btn" @click="toggleNext"><i class="fa-solid fa-forward-step fa-2xl"></i></button> -->
 				</div>
 			</div>
