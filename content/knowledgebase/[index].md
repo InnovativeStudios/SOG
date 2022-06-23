@@ -9,7 +9,7 @@ title: 'Knowledge Base - Index'
 ::card-row
 :::card
 ---
-icon: 'fas fa-rocket fa-2x'
+icon: 'fad fa-rocket fa-2x'
 link: '/knowledgebase'
 title: 'Getting Started'
 description: 'Examples to get you started quickly and easily.'
@@ -18,7 +18,7 @@ description: 'Examples to get you started quickly and easily.'
 
 :::card
 ---
-icon: 'fas fa-book fa-2x'
+icon: 'fad fa-book fa-2x'
 link: '/knowledgebase'
 title: 'About'
 description: 'Information and Future Goals of the Project.'
@@ -27,7 +27,7 @@ description: 'Information and Future Goals of the Project.'
 
 :::card
 ---
-icon: 'fas fa-users fa-2x'
+icon: 'fad fa-users fa-2x'
 link: '/knowledgebase'
 title: 'Contributors'
 description: 'Contributors of the Project.'
@@ -36,7 +36,7 @@ description: 'Contributors of the Project.'
 
 :::card
 ---
-icon: 'fas fa-file-code fa-2x'
+icon: 'fad fa-file-code fa-2x'
 link: '/knowledgebase/framework'
 title: 'Framework'
 description: 'Developer documentation and integrated features.'
@@ -45,7 +45,7 @@ description: 'Developer documentation and integrated features.'
 
 :::card
 ---
-icon: 'fas fa-tshirt fa-2x'
+icon: 'fad fa-tshirt fa-2x'
 link: '/knowledgebase/loadouts'
 title: 'Loadouts'
 description: 'Example Loadouts'
