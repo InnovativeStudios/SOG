@@ -10,7 +10,7 @@ title: 'Knowledge Base - Index'
 :::card
 ---
 icon: 'fad fa-rocket fa-2x'
-link: '/knowledgebase'
+link: '/knowledgebase/getting-started'
 title: 'Getting Started'
 description: 'Examples to get you started quickly and easily.'
 ---
@@ -19,7 +19,7 @@ description: 'Examples to get you started quickly and easily.'
 :::card
 ---
 icon: 'fad fa-book fa-2x'
-link: '/knowledgebase'
+link: '/knowledgebase/about'
 title: 'About'
 description: 'Information and Future Goals of the Project.'
 ---
@@ -28,7 +28,7 @@ description: 'Information and Future Goals of the Project.'
 :::card
 ---
 icon: 'fad fa-users fa-2x'
-link: '/knowledgebase'
+link: '/knowledgebase/contributors'
 title: 'Contributors'
 description: 'Contributors of the Project.'
 ---
