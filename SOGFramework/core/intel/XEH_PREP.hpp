@@ -1,2 +1,0 @@
-PREP(addIntelToDiary);
-PREP(initIntel);
