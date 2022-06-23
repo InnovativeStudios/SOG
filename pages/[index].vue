@@ -4,7 +4,7 @@
 			<template #feat>
 				<article class="feat">
 					<div class="feat-body">
-						<h1 class="feat-title mb-3">Tom Clancy's SOG</h1>
+						<!-- <h1 class="feat-title mb-3">Tom Clancy's SOG</h1> -->
 						<audio-list />
 					</div>
 				</article>
