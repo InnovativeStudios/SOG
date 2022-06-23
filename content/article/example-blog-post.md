@@ -1,5 +1,5 @@
 ---
-title: 'Example Blog Post'
+title: 'Blog - Example Blog Post'
 ---
 
 # Example Blog Post
