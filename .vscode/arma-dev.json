@@ -1,0 +1,19 @@
+{
+	"title": "ArmA 3 Persistent Database",
+	"name": "PDO",
+	"author": "tulrich & Spackenbremse",
+	"website": "https://forums.bohemia.net/forums/topic/186782-sru-persistent-database-and-resupply/",
+	"version": "0.0.1",
+	"buildPath": "build",
+	"privateKey": "",
+	"serverDirs": [
+		"src/server_core",
+		"src/server_config"
+	],
+	"serverUse32bit": false,
+	"clientDirs": [
+		"src/client"
+	],
+	"clientMods": [],
+	"ftpConnection": {}
+}

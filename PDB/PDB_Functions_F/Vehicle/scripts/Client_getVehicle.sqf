@@ -1,0 +1,1 @@
+[] remoteExec ["PDO_fnc_Server_getVehicle"];
