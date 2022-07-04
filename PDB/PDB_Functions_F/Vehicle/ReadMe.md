@@ -1,3 +1,3 @@
 # Vehicle
 ## Description:
-_This function adds various utilities for persistent vehicle saving._
+_This adds various needed functions for persistent vehicle saving._
