@@ -17,4 +17,4 @@ _sql_res = "extDB3" callExtension format["0:SQL:SELECT playerRank, playerAdmin, 
 _sql_res2 = call compile ("extDB3" callExtension format["0:SQL:SELECT playerInv FROM player p LEFT JOIN player_mission_connection pmc ON (pmc.playerUID = p.playerUID AND pmc.mission_FK = '%2') WHERE p.playerUID = '%1'", _playerUID, pdb_mission_fk]);
 
 sleep 5;
-[_Player, _playerUID, _sql_res, _sql_res2] remoteExec ["PDO_fnc_Client_getUnit"];
+[_Player, _playerUID, _sql_res, _sql_res2] remoteExec ["PDB_fnc_Client_getUnit"];
