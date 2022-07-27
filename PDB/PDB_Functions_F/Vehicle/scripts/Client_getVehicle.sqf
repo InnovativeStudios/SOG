@@ -1,1 +1,0 @@
-[] remoteExecCall ["PDB_fnc_Server_getVehicle"];
