@@ -1,0 +1,90 @@
+class Sentences {	
+	class Opening {
+		text = "";
+		speech[] = { "\SOG_Audio_F\Hospital\Class01\Lecture\Sounds\SOGMedicalClass01LectureOpening.ogg" };
+		class Arguments {};
+		actor = "dummy";
+	};
+	
+	class PartA {
+		text = "";
+		speech[] = { "\SOG_Audio_F\Hospital\Class01\Lecture\Sounds\SOGMedicalClass01LecturePartA.ogg" };
+		class Arguments {};
+		actor = "dummy";
+	};
+
+    class PartB {
+		text = "";
+		speech[] = { "\SOG_Audio_F\Hospital\Class01\Lecture\Sounds\SOGMedicalClass01LecturePartB.ogg" };
+		class Arguments {};
+		actor = "dummy";
+	};
+
+    class PartC {
+		text = "";
+		speech[] = { "\SOG_Audio_F\Hospital\Class01\Lecture\Sounds\SOGMedicalClass01LecturePartC.ogg" };
+		class Arguments {};
+		actor = "dummy";
+	};
+
+    class PartD {
+		text = "";
+		speech[] = { "\SOG_Audio_F\Hospital\Class01\Lecture\Sounds\SOGMedicalClass01LecturePartD.ogg" };
+		class Arguments {};
+		actor = "dummy";
+	};
+
+    class PartE {
+		text = "";
+		speech[] = { "\SOG_Audio_F\Hospital\Class01\Lecture\Sounds\SOGMedicalClass01LecturePartE.ogg" };
+		class Arguments {};
+		actor = "dummy";
+	};
+
+    class PartF {
+		text = "";
+		speech[] = { "\SOG_Audio_F\Hospital\Class01\Lecture\Sounds\SOGMedicalClass01LecturePartF.ogg" };
+		class Arguments {};
+		actor = "dummy";
+	};
+
+    class PartG {
+		text = "";
+		speech[] = { "\SOG_Audio_F\Hospital\Class01\Lecture\Sounds\SOGMedicalClass01LecturePartG.ogg" };
+		class Arguments {};
+		actor = "dummy";
+	};
+
+    class PartH {
+		text = "";
+		speech[] = { "\SOG_Audio_F\Hospital\Class01\Lecture\Sounds\SOGMedicalClass01LecturePartH.ogg" };
+		class Arguments {};
+		actor = "dummy";
+	};
+
+    class PartI {
+		text = "";
+		speech[] = { "\SOG_Audio_F\Hospital\Class01\Lecture\Sounds\SOGMedicalClass01LecturePartI.ogg" };
+		class Arguments {};
+		actor = "dummy";
+	};
+
+	class PartJ {
+		text = "";
+		speech[] = { "\SOG_Audio_F\Hospital\Class01\Lecture\Sounds\SOGMedicalClass01LecturePartJ.ogg" };
+		class Arguments {};
+		actor = "dummy";
+	};
+
+    class Finish {
+		text = "";
+		speech[] = { "\SOG_Audio_F\Hospital\Class01\Lecture\Sounds\SOGMedicalClass01LectureFinish.ogg" };
+		class Arguments {};
+		actor = "dummy";
+	};
+};
+
+class Arguments {};
+class Special {};
+startWithVocal[] = {hour};
+startWithConsonant[] = {europe, university};
