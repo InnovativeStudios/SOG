@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>SOG Launcher - Index</title>
+	<link rel="stylesheet" href="./dist/main.css">
+</head>
+<body>
+	<main class="container-fluid">
+		<div class="row">
+			<section class="col position-relative">
+				<div class="position-absolute text-center bottom-0 mb-3">
+					<img src="./dist/arma3logo.png" alt="logo" class="img-fluid w-50">
+					<h4 class="text-uppercase text-white">Tom Clancy's SOG</h4>
+				</div>
+			</section>
+			<section class="col-6 d-flex justify-content-center align-items-center vh-100">
+				<div class="text-center">
+					<a class="display-3 fw-semibold text-decoration-none text-uppercase text-white sog-btn" href="#">Play</a>
+					<br />
+					<button class="btn btn-outline-light border-0 sog-btn"><i class="fab fa-discord"></i></button>
+					<button class="btn btn-outline-light border-0 sog-btn"><i class="fad fa-globe"></i></button>
+					<button class="btn btn-outline-light border-0 sog-btn"><i class="fad fa-shopping-cart"></i></button>
+				</div>
+			</section>
+			<section class="col position-relative">
+				<div class="position-absolute top-0 mt-3">
+					<button class="btn btn-outline-light border-0 sog-btn" href="#"><i class="fad fa-cog"></i></button>
+				</div>
+				<div class="position-absolute bottom-0 mb-3">
+					<p class="small my-0">Node.js <span id="node-version"></span></p>
+					<p class="small my-0">Chromium <span id="chrome-version"></span></p>
+					<p class="small my-0">Electron <span id="electron-version"></span></p>
+				</div>
+			</section>
+		</div>
+	</main>
+	
+	<script src="./dist/renderer.js"></script>
+	<script src="./dist/bootstrap.bundle.min.js"></script>
+	<script src="./dist/all.min.js"></script>
+</body>
+</html>
