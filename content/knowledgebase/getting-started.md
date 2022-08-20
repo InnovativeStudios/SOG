@@ -17,11 +17,13 @@ First of all, you need to setup a mission folder where you store your mission fi
 > **Note:** It is advised that you use some sort of naming convention to keep your missions organised. Here's on for example: `CO16_Operation_Name.Altis`, where `CO` stands for Cooperative Mission, `16` is the available player slots, and `Operation_Name` is the name of the mission. **Don't Use Spaces in the Mission File, Use Underscores Instead.**
 
 Once the folder is created, head over to the GitHub Repository and Download the Latest Release of the Framework from [here](https://github.com/InnovativeStudios/SOG/releases). Unzip the file and put it in the mission folder, so you should have something like this:
+
 ![Screenshot](https://camo.githubusercontent.com/1c6b92486b6fd263e5cb2b5f2ab19ffef4f5df95894988ba1f08d161efa3708e/68747470733a2f2f692e696d6775722e636f6d2f763362393878632e706e67)
 
 **Folder Structure
 You don't really need to change things in the root of the mission file, except for the CBA settings but we'll cover that later. Here's a graph of the `SOG_Framework` folder to understand the structure better:
-`
+
+```
 SOG_Framework
    ├───config                - Contains the mission configs
    │   ├───briefing          - Contains the briefing for each side
@@ -34,7 +36,8 @@ SOG_Framework
    │
    ├───core                  - Contains the modules
    │   └─── ...
-`
+```
+
 Everything you need to change is in the config folder.
 If you need more information about a module and its usage, then you'll find information in the README located in each module in core.
 
@@ -70,7 +73,7 @@ As your next step you should customize the endings that you wish to use in the m
 
 Example Config and how it shows up in the game:
 
-`
+```
 class MissionSuccess {
     title = "Mission Success";              // Closing Shot - Main title
     subtitle = "default_subtitle";          // Closing Shot - Short description
@@ -79,5 +82,5 @@ class MissionSuccess {
     picture = "mil_end";                    // Closing Shot - 1:1 icon in the middle of the screen
     pictureColor[] = {0, 0.8, 0, 1};        // Closing Shot - Icon Colour
 };
-`
+```
 ![Screenshot](https://camo.githubusercontent.com/e77ce7b6e0d7ec36797f599f5cace18c6c778fb6bbc9effa5e75a34dcb972cc5/68747470733a2f2f692e696d6775722e636f6d2f323969526b545a2e6a7067)
