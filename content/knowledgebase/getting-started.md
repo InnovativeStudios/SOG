@@ -58,7 +58,7 @@ The optional modules and their configuration are covered in the README file of e
 
 * Debug Mode: Enabled by default, while it's enabled it'll show `DEBUG` missages in the in-game chat which can help with the development of the mission. Don't forget to disable this before deploying the mission. `INFO`, `WARNING` and `ERROR` messages will show even if this setting is disabled.
 
-* End Conditions: There are multiple End Conditions that you can use in your mission which are covered [here](https://github.com/InnovativeStudios/SOG/blob/main/SOG_Framework/core/end_conditions/README.md).
+* End Conditions: There are multiple End Conditions that you can use in your mission which are covered [here](https://github.com/InnovativeStudios/SOG/blob/main/SOGFramework/core/end_conditions/README.md).
 
 ### `CfgDebriefing.hpp`
 This file is located in `SOG_Framework\debriefing\` folder and it holds all the possible mission endings for the mission. There are two sections by default:
