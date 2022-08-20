@@ -11,7 +11,7 @@ In this short guide you'll learn how to setup the framework and initialize the b
 
 > **Note:** 3DEN Enhanced is an awsome tool that is recommended for mission editing. You can find it on the [Steam Workshop](https://steamcommunity.com/workshop/filedetails/?id=623475643)
 
-## 1. Setting Up the Mission Folder
+## Setting Up the Mission Folder
 First of all, you need to setup a mission folder where you store your mission file along with its scripts and other assets. Open the 3DEN Editor in ArmA and Select the map you want to use for the mission. Press CTRL+S to save the empty mission which will create the mission folder for you in the following folder: `\Users\YOUR_USERNAME\Documents\Arma 3\mpmissions\` or `\Users\YOUR_USERNAME\Documents\Arma 3 - Other Profiles\YOUR_PROFILE\mpmissions\`.
 
 > **Note:** It is advised that you use some sort of naming convention to keep your missions organised. Here's on for example: `CO16_Operation_Name.Altis`, where `CO` stands for Cooperative Mission, `16` is the available player slots, and `Operation_Name` is the name of the mission. **Don't Use Spaces in the Mission File, Use Underscores Instead.**
@@ -41,7 +41,7 @@ SOG_Framework
 Everything you need to change is in the config folder.
 If you need more information about a module and its usage, then you'll find information in the README located in each module in core.
 
-## 2. Configuring the Essential Modules
+## Configuring the Essential Modules
 Now that the mission folder is setup, it's time to configure the basic settings in the config folder.
 
 ### Description
@@ -85,7 +85,7 @@ class MissionSuccess {
 ```
 ![Screenshot](https://camo.githubusercontent.com/e77ce7b6e0d7ec36797f599f5cace18c6c778fb6bbc9effa5e75a34dcb972cc5/68747470733a2f2f692e696d6775722e636f6d2f323969526b545a2e6a7067)
 
-## 3. Setting the Editor Attributes
+## Setting the Editor Attributes
 Most of the settings are already set in the framework, however there are some options that can't be set outside of the editor. You'll have to set these in the editor, and they can be found under the **Attributes** Tab in 3DEN.
 
 ### General
@@ -120,7 +120,7 @@ For more information [Check Out this Link](https://community.bistudio.com/wiki/A
 
 The garbage collector is configured by the framework so no need to set it here.
 
-## 4. Setting Up Player Slots
+## Setting Up Player Slots
 Now that the basics are configured the next step is to add the player units and configure them. It is recommended that you use vanilla units (NATO, CSAT, Etc.) for the player slots because some modded units might not be configured properly.
 
 Remember that the order in which you place down the units is going to be the order in the player slot screen. However, if you are using 3DEN Enhanced Mod, it can rearrange the order.
@@ -142,7 +142,7 @@ After that's done, you need to configure the individual player slots like shown 
 This is the basic setup of a unit, no need to set anything else.
 **At this point the basics are configured and you can start working on the mission itself. Remember, if you need more information about the modules, then check out the `README` in the module folder. You can find the modules [here](https://github.com/InnovativeStudios/SOG/tree/development/SOG_Framework/core).
 
-## 5. Notes
+## Notes
 * **CBA Settings:** The framework comes with a default CBA Settings file that you can find in the root of the mission folder. However, it covers only a couple of basic mods (e.g. ACE, TFAR, Etc.), so you need to include any additional mods here.
 
 [Latest Release](https://github.com/InnovativeStudios/SOG/releases/latest)
