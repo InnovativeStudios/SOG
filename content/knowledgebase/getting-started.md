@@ -110,6 +110,7 @@ The second thing you have to change is the **Respawn** settings. Change it from 
 > **Note:** For mor information about how to setup the respawn position, check out the tooltip in-game.
 
 Don't change anything else.
+
 ![Screenshot](https://camo.githubusercontent.com/41cecc75b41fc21f3163fba27ada7d713fa036cade1e78ccf4a709f46d4ba482/68747470733a2f2f692e696d6775722e636f6d2f347463355541312e6a7067)
 
 ### Performance
@@ -126,10 +127,12 @@ Remember that the order in which you place down the units is going to be the ord
 
 ### Group
 Once you are done with the unit layout, it is time to configure the slots. First of all, set the group name by clicking the group icon (Blue Rectangle or Red Square above the Squad Leader).
+
 ![Screenshot](https://camo.githubusercontent.com/04088e3d13e94518324dfe76242c2dbba1371fc6b63edf2def9e83e5eed7813b/68747470733a2f2f692e696d6775722e636f6d2f775a365a4a72592e6a7067)
 
 ### Unit
 After that's done, you need to configure the individual player slots like shown below.
+
 ![Screenshot](https://camo.githubusercontent.com/6ca790e27575213650c57ba8c75b4f0af4566631a918aefe0f31524367fe98f8/68747470733a2f2f692e696d6775722e636f6d2f4c525054696d352e6a7067)
 
 1. **Playable:** This checkbox controls if the unit is a player unit.
