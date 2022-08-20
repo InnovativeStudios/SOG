@@ -13,7 +13,7 @@
 							<h2 class="toc-title mt-3">Navigation</h2>
 						<ul class="nav">
 							<li class="nav-item" v-for="(n, i) in wikiNav" :key="`knowledgebase-nav-item-${i}`">
-								<NuxtLink class="nav-link ml-2" :to="`${n.link}`">{{ n.title }}</NuxtLink>
+								<NuxtLink class="nav-link ml-2" :to="`${n.link}`" :target="`${n.target}`">{{ n.title }}</NuxtLink>
 							</li>
 						</ul>
 					</div>
@@ -63,19 +63,23 @@ const toc = computed(() => {
 const wikiNav = [
 	{
 		title: 'Home',
-		link: '/knowledgebase'
+		link: '/knowledgebase',
+		target: ''
 	},
 	{
 		title: 'Framework',
-		link: '/knowledgebase/framework'
+		link: '/knowledgebase/framework',
+		target: ''
 	},
 	{
 		title: 'Loadouts',
-		link: '/knowledgebase/loadout'
+		link: '/knowledgebase/loadout',
+		target: ''
 	},
 	{
 		title: 'Project Board',
-		link: 'https://github.com/users/InnovativeStudios/projects/3/views/1'
+		link: 'https://github.com/users/InnovativeStudios/projects/3/views/1',
+		target: '_blank'
 	}
 ]
 useHead ({
