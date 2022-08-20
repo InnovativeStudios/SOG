@@ -69,6 +69,7 @@ As your next step you should customize the endings that you wish to use in the m
 > **Note:** Do Not Remove any of the Default Endings as it can break parts of the framework.
 
 Example Config and how it shows up in the game:
+
 `
 class MissionSuccess {
     title = "Mission Success";              // Closing Shot - Main title
