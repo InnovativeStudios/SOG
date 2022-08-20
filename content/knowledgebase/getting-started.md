@@ -67,6 +67,7 @@ This file is located in `SOG_Framework\debriefing\` folder and it holds all the 
 As your next step you should customize the endings that you wish to use in the mission. The default endings are linked to the endings defined in `config.cfg`.
 
 > **Note:** Do Not Remove any of the Default Endings as it can break parts of the framework.
+
 Example Config and how it shows up in the game:
 `
 class MissionSuccess {
