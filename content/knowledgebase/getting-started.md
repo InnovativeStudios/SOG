@@ -20,7 +20,7 @@ Once the folder is created, head over to the GitHub Repository and Download the 
 
 ![Screenshot](https://camo.githubusercontent.com/1c6b92486b6fd263e5cb2b5f2ab19ffef4f5df95894988ba1f08d161efa3708e/68747470733a2f2f692e696d6775722e636f6d2f763362393878632e706e67)
 
-**Folder Structure
+**Folder Structure**
 You don't really need to change things in the root of the mission file, except for the CBA settings but we'll cover that later. Here's a graph of the `SOG_Framework` folder to understand the structure better:
 
 ```
@@ -44,14 +44,14 @@ If you need more information about a module and its usage, then you'll find info
 ## 2. Configuring the Essential Modules
 Now that the mission folder is setup, it's time to configure the basic settings in the config folder.
 
-`**Description.hpp**`
+**`Description.hpp`**
 This file contains some of the more commonly used attributes of `description.exe` which can be located in the mission root.
 
 First of all, you need to put down your [Steam ID](https://steamid.xyz/) where it's defined. The reason why it's required is because how the admin module is setup. The framework will recognize you as the creator of the mission based on the Steam UID and you'll have access to the admin functions during the mission, in case some debugging is needed. The logged-in admin on the server will also have access to these tools.
 
 The rest of the attributes should be covered [here](https://community.bistudio.com/wiki/Description.ext) in details.
 
-`**Config.sqf**`
+**`Config.sqf`**
 This contains the configuration of the framework, it has two parts: the first one is the essential mission parameters that need to be configured in every mission, the second half is the optional modules that you can enable/disable according to your needs.
 
 The optional modules and their configuration are covered in the README file of each module located in the `SOG_Framework\core\` folder, so let's take a look at the Mission Parameters section now.
@@ -60,7 +60,7 @@ The optional modules and their configuration are covered in the README file of e
 
 * End Conditions: There are multiple End Conditions that you can use in your mission which are covered [here](https://github.com/InnovativeStudios/SOG/blob/main/SOG_Framework/core/end_conditions/README.md).
 
-`**CfgDebriefing.hpp**`
+**`CfgDebriefing.hpp`**
 This file is located in `SOG_Framework\debriefing\` folder and it holds all the possible mission endings for the mission. There are two sections by default:
 | Section | Description |
 | ------- | ----------- |
