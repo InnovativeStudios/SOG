@@ -1,0 +1,16 @@
+{
+	"title": "ArmA 3 Persistent Database",
+	"name": "PDB",
+	"author": "tulrich & Spackenbremse",
+	"website": "https://forums.bohemia.net/forums/topic/186782-sru-persistent-database-and-resupply/",
+	"version": "0.0.1",
+	"buildPath": "build",
+	"privateKey": "",
+	"serverDirs": [
+		"PDB"
+	],
+	"serverUse32bit": false,
+	"clientDirs": [],
+	"clientMods": [],
+	"ftpConnection": {}
+}
