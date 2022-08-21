@@ -136,7 +136,7 @@ After that's done, you need to configure the individual player slots like shown 
 ![Screenshot](https://camo.githubusercontent.com/6ca790e27575213650c57ba8c75b4f0af4566631a918aefe0f31524367fe98f8/68747470733a2f2f692e696d6775722e636f6d2f4c525054696d352e6a7067)
 
 1. **Playable:** This checkbox controls if the unit is a player unit.
-2. **Role Description:** The name of the unit's role on the player slot screen. Use the following format if the unit is the leader of the group: ```ROLE_NAME@GROUP_NAME```, for example `Squad Leader@ALPHA`. No need to set the **GROUP_NAME** for each unit in the group, only for the group leader. This way the group name shows up properly in the player slot screen [example](https://i.imgur.com/okumQJW.jpg)
+2. **Role Description:** The name of the unit's role on the player slot screen. Use the following format if the unit is the leader of the group: `ROLE_NAME@GROUP_NAME`, for example `Squad Leader@ALPHA`. No need to set the **GROUP_NAME** for each unit in the group, only for the group leader. This way the group name shows up properly in the player slot screen [example](https://i.imgur.com/okumQJW.jpg)
 4. **Rank:** Optionally you can set the rank of the unit.
 
 This is the basic setup of a unit, no need to set anything else.
