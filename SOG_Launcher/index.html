@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>SOG Launcher</title>
+		<link rel="stylesheet" href="css/style.css">
+	</head>
+	<body>
+		<section class="sog-bg">
+			<div class="sog-container">
+				<section class="sog-content">
+					<div class="sog-brand">
+						<div class="sog-brand-body">
+							<img src="images/arma3logo.png" alt="arma3logo" class="sog-brand-img" />
+							<p class="sog-brand-text">Tom Clancy's SOG</p>
+						</div>
+					</div>
+				</section>
+	
+				<section class="sog-content">
+					<div class="sog-cpan">
+						<div class="sog-cpan-body">
+							<button class="sog-cpan-btn1" onclick="onClick()">Play</button>
+							<div>
+								<a class="sog-cpan-btn2" href="https://discord.gg/RJMNXufz" target="_blank">
+									<i class="fab fa-discord"></i>
+								</a>
+								<a class="sog-cpan-btn2 mx-2" href="https://arma3-sog.netlify.app" target="_blank">
+									<i class="fas fa-globe"></i>
+								</a>
+								<a class="sog-cpan-btn2" href="https://arma3-sog.netlify.app" target="_blank">
+									<i class="fas fa-shopping-cart"></i>
+								</a>
+							</div>
+						</div>
+					</div>
+				</section>
+	
+				<section class="sog-content">
+					<div class="sog-misc">
+						<div class="sog-misc-body">
+							<div class="sog-optn">
+								<button class="sog-cpan-btn2" id="ctlBtn" onclick="togglePlay()"><i class="fas fa-volume"></i></button>
+								&nbsp;
+								&nbsp;
+								<button class="sog-cpan-btn2" id="btnSelDir"><i class="fas fa-folder"></i></button>
+								<p class="sog-meta-text-hidden">File Path: <strong id="dirPath"></strong></p>
+							</div>
+							<div class="sog-meta">
+								<p class="sog-meta-text" id="info"></p>
+							</div>
+						</div>
+					</div>
+				</section>
+			</div>
+		</section>
+
+		<audio src="media/stealth.mp3" type="audio/mpeg" autoplay id="audioPlayer" />
+
+		<!-- You can also require other files to run in this process -->
+		<script src="renderer.js"></script>
+		<script src="js/all.min.js"></script>
+		<script src="js/audioPlayer.js"></script>
+	</body>
+</html>
