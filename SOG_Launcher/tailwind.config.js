@@ -1,16 +1,15 @@
-const colors = require('tailwindcss/colors')
-
 /** @type {import('tailwindcss').Config} */
+const colors = require("tailwindcss/colors")
 module.exports = {
-  content: ["./**/*.{html,js}"],
+  content: ["./src/**/*.{html,js}"],
   theme: {
     colors: {
-      transparent: 'transparent',
-      current: 'current',
+      transparent: "transparent",
+      current: "currentColor",
       black: colors.black,
       white: colors.white,
       slate: colors.slate,
-      gray: colors.gray, 
+      gray: colors.gray,
       zinc: colors.zinc,
       red: colors.red,
       yellow: colors.yellow,

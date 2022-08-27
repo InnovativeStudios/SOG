@@ -2,4 +2,4 @@
 .old
 node_modules
 build
-SOG_Launcher/out/**/*
+out

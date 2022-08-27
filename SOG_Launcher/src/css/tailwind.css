@@ -1,8 +1,9 @@
 @tailwind base;
 @tailwind components;
+@tailwind utilities;
 
 body {
-	@apply w-screen h-screen bg-zinc-900;
+	@apply bg-zinc-900 h-screen w-screen;
 }
 
 section.sog-bg {
