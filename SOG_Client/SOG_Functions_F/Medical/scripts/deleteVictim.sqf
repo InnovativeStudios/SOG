@@ -13,19 +13,5 @@
  * 2: Optional Amount of time before SFX sound will be deleted. <NUMBER>
  */
 
-SOGAmbientSound = {
-	params ["_source", "_sfx", "_time"];
-	private ["_pos", "_sound0"];
-
-	_pos = getPos _source;
-	_sound0 = createSoundSource [_source, _pos, [], 0];
-
-	if (!isNil _time) then {
-		sleep _time;
-		deleteVehicle _sound0;
-	};
-
-	if (!alive _source) then {
-		deleteVehicle _sound0;
-	};
-};
+params ["_unit"];
+_unit setDamage 1;
