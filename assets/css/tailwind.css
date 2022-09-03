@@ -11,6 +11,10 @@
 	src: url(../webfonts/Tangerine-Bold.ttf);
 }
 
+* {
+	border-radius: 0px !important;
+}
+
 body {
 	@apply bg-gray-100;
 }
@@ -54,7 +58,7 @@ body {
 	@apply text-xl font-semibold hover:text-sky-400;
 }
 .card-body {
-	@apply w-full max-w-none px-6 py-4;
+	@apply w-full max-w-none p-4;
 }
 .card-body.prose a {
 	@apply text-sky-400 no-underline px-1;
@@ -64,7 +68,7 @@ body {
 	text-shadow: 0 0 0.1875em theme('colors.sky.400'), 0 0 0.1875em theme('colors.black');
 }
 .card-footer {
-	@apply border-t flex justify-between items-center text-sm w-full max-w-none px-6;
+	@apply border-t flex justify-between items-center text-sm w-full max-w-none px-4;
 }
 
 .feat, .feat-body {
