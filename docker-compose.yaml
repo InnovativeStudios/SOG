@@ -1,0 +1,7 @@
+version: "3"
+services:
+  website:
+    image: jschmidt92/sog
+    ports:
+      - "3000:80"
+    restart: always

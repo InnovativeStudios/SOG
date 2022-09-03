@@ -1,13 +1,13 @@
 FROM node:lts-alpine
 
-RUN mkdir -p /webmin/src/sog
-WORKDIR /webmin/src/sog
+RUN mkdir -p /usr/src/sog
+WORKDIR /usr/src/sog
 COPY . .
 
-RUN yarn && yarn cache clean -force
-RUN yarn run build
+RUN npm ci && npm cache clean -force
+RUN npm run build
 
-ENV NUXT_HOST=127.0.0.1
+ENV NUXT_HOST=0.0.0.0
 ENV NUST_PORT=3000
 
 EXPOSE 3000
