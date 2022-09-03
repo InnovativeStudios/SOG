@@ -1,3 +1,49 @@
+<script setup lang="ts">
+const audioPlayer = ref(null)
+const emit = defineEmits<{
+	(e: 'goBack', value: boolean): void
+	(e: 'next'): void
+	(e: 'previous'): void
+}>()
+
+let isPlaying = ref(false)
+
+defineProps<{
+	isVisible: boolean,
+	song: {
+		id: number,
+		name: string,
+		artistName: string,
+		albumName: string,
+		year: number,
+		image: string,
+		audio: string
+	}
+}>()
+
+function setIsVisible(value: boolean) {
+	emit('goBack', value)
+}
+
+function toggleNext() {
+	emit('next')
+}
+
+function togglePrevious() {
+	emit('previous')
+}
+
+function togglePlay() {
+	if (isPlaying.value) {
+		audioPlayer.value.pause()
+	} else {
+		audioPlayer.value.play()
+	}
+	isPlaying.value = !isPlaying.value
+	audioPlayer.value.volume = 0.05
+}
+</script>
+
 <template>
 	<div>
 		<audio :src="song.audio" preload="auto" ref="audioPlayer"></audio>
@@ -20,49 +66,3 @@
 		</section> -->
 	</div>
 </template>
-
-<script setup lang="ts">
-const audioPlayer = ref(null)
-const emit = defineEmits<{
-  (e: 'goBack', value: boolean): void
-  (e: 'next'): void
-  (e: 'previous'): void
-}>()
-
-let isPlaying = ref(false)
-
-defineProps<{
-	isVisible: boolean,
-	song: {
-		id: number,
-		name: string,
-		artistName: string,
-		albumName: string,
-		year: number,
-		image: string,
-		audio: string
-	}
-}>()
-
-function setIsVisible(value: boolean) {
-  emit('goBack', value)
-}
-
-function toggleNext() {
-  emit('next')
-}
-
-function togglePrevious() {
-  emit('previous')
-}
-
-function togglePlay() {
-	if (isPlaying.value) {
-		audioPlayer.value.pause()
-	} else {
-		audioPlayer.value.play()
-	}
-	isPlaying.value = !isPlaying.value
-	audioPlayer.value.volume = 0.05
-}
-</script>

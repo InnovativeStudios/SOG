@@ -1,14 +1,14 @@
 <template>
-  <div class="bg-black">
-    <main class="container max-w-7xl mx-auto px-3">
-      <section>
-        <slot name="feat"></slot>
-      </section>
-    </main>
-    <footer class="footer">
-      <slot name="footer"></slot>
-    </footer>
-  </div>
+	<div class="bg-black">
+			<main class="container max-w-7xl mx-auto px-3">
+				<section>
+					<slot name="feat"></slot>
+				</section>
+			</main>
+			<footer class="footer">
+				<slot name="footer"></slot>
+			</footer>
+	</div>
 </template>
 
 <style scoped>
@@ -50,7 +50,7 @@ section:hover:before {
 		background-position: -3.125em 0;
 	}
 	70% {
-		background-position: 0 -1.25em;
+			background-position: 0 -1.25em;
 	}
 	80% {
 		background-position: -3.75em -1.25em;

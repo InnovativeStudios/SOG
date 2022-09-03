@@ -1,3 +1,16 @@
+<script setup lang="ts">
+interface Link {
+	name: string,
+	href: string
+}
+
+const links: Link[] = [
+	{ name: 'Home', href: '/' },
+	{ name: 'Blog', href: '/blog' },
+	{ name: 'Knowledge Base', href: '/knowledgebase' }
+]
+</script>
+
 <template>
 	<div class="bg-black">
 		<header class="container mx-auto">
@@ -11,19 +24,6 @@
 		</header>
 	</div>
 </template>
-
-<script setup lang="ts">
-interface Link {
-	name: string,
-	href: string
-}
-
-const links: Link[] = [
-	{ name: 'Home', href: '/' },
-	{ name: 'Blog', href: '/blog' },
-	{ name: 'Knowledge Base', href: '/knowledgebase' }
-]
-</script>
 
 <style scoped>
 .nav-link.router-link-active.router-link-exact-active {

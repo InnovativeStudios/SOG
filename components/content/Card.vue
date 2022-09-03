@@ -1,3 +1,12 @@
+<script setup lang="ts">
+defineProps<{
+	title?: string,
+	description?: string,
+	icon?: string,
+	link?: string
+}>();
+</script>
+
 <template>
 	<section class="border-r border-b shadow-sm bg-gray-800 !h-40 p-3">
 		<article class="grid grid-flow-row grid-cols-1 lg:grid-cols-3 gap-3 items-center w-full h-full">
@@ -12,12 +21,3 @@
 		</article>
 	</section>
 </template>
-
-<script setup lang="ts">
-defineProps<{
-	title?: string,
-	description?: string,
-	icon?: string,
-	link?: string
-}>();
-</script>

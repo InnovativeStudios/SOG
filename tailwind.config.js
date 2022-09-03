@@ -1,13 +1,11 @@
 /** @type {import('tailwindcss').Config} */
-
 const colors = require('tailwindcss/colors')
-
 module.exports = {
   content: [
+    './app.vue',
     './assets/**/*.css',
-    './assets/**/*.scss',
-    './components/**/*.{js,vue,ts}',
-    './content/**/*.{md,yml,json,yaml,toml,csv}',
+    './components/**/*.{js,ts,vue}',
+    './content/**/*.{csv,json,md,toml,yaml,yml}',
     './layouts/**/*.vue',
     './pages/**/*.vue',
     './plugins/**/*.{js,ts}'
@@ -19,19 +17,18 @@ module.exports = {
       black: colors.black,
       white: colors.white,
       slate: colors.slate,
-      gray: colors.slate,
+      gray: colors.gray,
       zinc: colors.zinc,
-      neutral: colors.neutral,
-      stone: colors.stone,
       red: colors.red,
+      yellow: colors.yellow,
       green: colors.green,
       blue: colors.blue,
-      yellow: colors.yellow,
       sky: colors.sky
     },
-    extend: {}
+    extend: {},
   },
   plugins: [
+    require('@tailwindcss/forms'),
     require('@tailwindcss/typography')
-  ]
+  ],
 }
