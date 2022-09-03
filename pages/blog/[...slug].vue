@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { convertDate } from '@/utils/index';
+
 definePageMeta ({
 	layout: false
 });
@@ -19,11 +21,14 @@ useHead ({
 			<article class="card">
 				<ClientOnly>
 					<img :src="blog.image" alt="Blog Image">
-					<ContentRenderer class="card-body prose prose-gray prose-sm lg:prose-base prose-img:w-full prose-video:w-full" :value="blog">
-						<template #empty>
-							<p>No content found.</p>
-						</template>
-					</ContentRenderer>
+					<div class="card-body">
+						<p>{{ convertDate(blog.date) }}</p>
+						<ContentRenderer class="" :value="blog">
+							<template #empty>
+								<p>No content found.</p>
+							</template>
+						</ContentRenderer>
+					</div>
 				</ClientOnly>
 			</article>
 		</template>

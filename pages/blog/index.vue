@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { convertDate } from '@/utils/index'
 useHead ({
 	title: 'Blog Index'
 });
@@ -14,6 +15,7 @@ const { data: blogPostList } = await useAsyncData("blogPostList", () => {
 			<div class="card" v-for="blogPost in blogPostList" :key="blogPost._path">
 				<img :src="blogPost.image" alt="Blog Post Image">
 				<div class="card-body">
+					<p>{{ convertDate(blogPost.date) }}</p>
 					<NuxtLink class="card-title" :to="`/blog${blogPost._path}`">{{ blogPost.title }}</NuxtLink>
 					<p>{{ blogPost.description }}</p>
 				</div>
