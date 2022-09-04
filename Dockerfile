@@ -2,9 +2,11 @@ FROM node:lts-alpine
 
 RUN mkdir -p /var/www/sog
 WORKDIR /var/www/sog
+
 COPY . .
 
-RUN npm ci && npm cache clean -force
+# RUN npm ci && npm cache clean -force
+RUN npm i
 RUN npm run build
 
 ENV NUXT_HOST=0.0.0.0
