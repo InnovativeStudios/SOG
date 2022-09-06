@@ -11,14 +11,14 @@ class CfgPatches {
 class CfgSounds {
 	sounds[] = {};
 
-	#include "\SOG_Audio_F\Hospital\Class01\Exam\Sounds.hpp"
-	#include "\SOG_Audio_F\Hospital\Class01\Lecture\Sounds.hpp"
-	#include "\SOG_Audio_F\Hospital\Class01\Opening\Sounds.hpp"
-	#include "\SOG_Audio_F\Hospital\Class01\Warning\Sounds.hpp"
-	#include "\SOG_Audio_F\Hospital\Dialogue\Sounds.hpp"
-	#include "\SOG_Audio_F\Hospital\Responses\Sounds.hpp"
+	#include "\SOG_Audio_F\Hospital\Class01\Exam\Sounds.h"
+	#include "\SOG_Audio_F\Hospital\Class01\Lecture\Sounds.h"
+	#include "\SOG_Audio_F\Hospital\Class01\Opening\Sounds.h"
+	#include "\SOG_Audio_F\Hospital\Class01\Warning\Sounds.h"
+	#include "\SOG_Audio_F\Hospital\Dialogue\Sounds.h"
+	#include "\SOG_Audio_F\Hospital\Responses\Sounds.h"
 
-	#include "\SOG_Audio_F\Submarine\Sounds.hpp"
+	#include "\SOG_Audio_F\Submarine\Sounds.h"
 };
 
 class CfgSFX {
