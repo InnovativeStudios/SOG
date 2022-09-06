@@ -24,8 +24,11 @@ contextBridge.exposeInMainWorld('sogAPI', {
   },
 
   updateMod: (appPath) => {
+    var https = require('https')
+    var fs = require('fs')
+
     var file = fs.createWriteStream(appPath + '/SOG.zip')
-    var request = https.get('https://drive.google.com/uc?export=download&id=1TKdqYJytqjPwNmzCahUbccOCfxqjJgVq', (res) => {
+    var req = https.get('https://drive.google.com/uc?export=download&id=1TKdqYJytqjPwNmzCahUbccOCfxqjJgVq', (res) => {
       res.pipe(file)
       console.log('statusCode:', res.statusCode)
       console.log('headers:', res.headers)

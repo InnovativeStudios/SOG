@@ -22,7 +22,7 @@ function goToSettingsWindow() {
 function onClick() {
 	var exePath = gamePathElement.innerText
 	// var modList = [`-mod="!Workshop/@ace;!Workshop/@ALiVE;!Workshop/@CBA_A3;@SOG"`]
-	var modList = [``]
+	var modList = [`-mod=""`]
 	var optionList = [`-noSplash -world="empty"`]
 	window.sogAPI.openGame(exePath, modList, optionList)
 }

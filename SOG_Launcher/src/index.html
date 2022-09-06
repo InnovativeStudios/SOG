@@ -45,12 +45,19 @@
 						<div class="sog-misc-body">
 							<div class="sog-optn">
 								<button class="sog-cpan-btn2 mr-2" id="btnCtl" onclick="togglePlay()"><i class="fas fa-volume"></i></button>
+								<!-- <button class="sog-cpan-btn2 mr-2" id="btnCtl" onclick="update()"><i class="fas fa-download"></i></button> -->
 								<!-- <button class="sog-cpan-btn2" onclick="goToSettingsWindow()"><i class="fas fa-cog"></i></button> -->
 								<button class="sog-cpan-btn2 ml-2" id="btnSelGameDir"><i class="fas fa-folder"></i></button>
 								<p class="sog-meta-text-hidden">File Path: <strong id="gamePath"></strong></p>
 							</div>
 							<div class="sog-meta">
-								<p class="sog-meta-text" id="info"></p>
+								<div class="sog-meta-body">
+									<label class="hidden" for="progress-bar" id="progress-label">Updater</label>
+									<progress class="rtl" id="progress-bar" max="100" value="0"></progress>
+									
+									<div class="sog-meta-text" id="control"></div>
+									<p class="sog-meta-text" id="info"></p>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -62,6 +69,7 @@
 
 		<!-- You can also require other files to run in this process -->
 		<script src="index.js"></script>
+		<script src="js/update.js"></script>
 		<script src="js/all.min.js" defer></script>
 	</body>
 </html>

@@ -25,7 +25,8 @@
     "tailwindcss": "^3.1.8"
   },
   "dependencies": {
-    "electron-squirrel-startup": "^1.0.0"
+    "electron-squirrel-startup": "^1.0.0",
+    "uaup-js": "^0.0.22"
   },
   "config": {
     "forge": {

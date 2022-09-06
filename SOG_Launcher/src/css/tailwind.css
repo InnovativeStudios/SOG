@@ -6,6 +6,27 @@ body {
 	@apply bg-zinc-900 h-screen w-screen;
 }
 
+/* progress::-webkit-progress-bar {
+	@apply bg-transparent;
+}
+progress::-webkit-progress-value {
+	@apply bg-white drop-shadow-[0_0_0.1875em_rgba(56,189,248,1)];
+} */
+
+progress.rtl {
+  direction: rtl;
+}
+progress,
+progress[role] {
+	@apply border-none h-1 w-full;
+}
+progress[value]::-webkit-progress-bar {
+	@apply bg-gray-400 bg-opacity-50 rounded-sm shadow-inner;
+}
+progress[value]::-webkit-progress-value {
+	@apply bg-white drop-shadow-[0_0_0.1875em_rgba(56,189,248,1)];
+}
+
 section.sog-bg {
 	@apply relative w-full h-screen bg-[url('../images/background.jpg')] bg-no-repeat bg-center bg-cover shadow-[inset_0_0_8em_8em_rgba(0,0,0,1)];
 }
@@ -77,8 +98,11 @@ section.sog-bg:hover:before {
 .sog-meta {
 	@apply flex justify-end items-end h-1/2;
 }
+.sog-meta-body {
+	@apply text-right;
+}
 .sog-meta-text {
-	@apply text-white text-sm text-right opacity-60;
+	@apply text-white text-sm opacity-60;
 }
 .sog-meta-text-hidden {
 	@apply hidden;

@@ -606,6 +606,10 @@ video {
   display: grid;
 }
 
+.hidden {
+  display: none;
+}
+
 .min-h-full {
   min-height: 100%;
 }
@@ -716,6 +720,40 @@ body {
   width: 100vw;
   --tw-bg-opacity: 1;
   background-color: rgb(24 24 27 / var(--tw-bg-opacity));
+}
+
+/* progress::-webkit-progress-bar {
+	@apply bg-transparent;
+}
+progress::-webkit-progress-value {
+	@apply bg-white drop-shadow-[0_0_0.1875em_rgba(56,189,248,1)];
+} */
+
+progress.rtl {
+  direction: rtl;
+}
+
+progress, 
+progress[role] {
+  height: 0.25rem;
+  width: 100%;
+  border-style: none;
+}
+
+progress[value]::-webkit-progress-bar {
+  border-radius: 0.125rem;
+  background-color: rgb(156 163 175 / var(--tw-bg-opacity));
+  --tw-bg-opacity: 0.5;
+  --tw-shadow: inset 0 2px 4px 0 rgb(0 0 0 / 0.05);
+  --tw-shadow-colored: inset 0 2px 4px 0 var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+progress[value]::-webkit-progress-value {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+  --tw-drop-shadow: drop-shadow(0 0 0.1875em rgba(56,189,248,1));
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
 section.sog-bg {
@@ -885,8 +923,11 @@ section.sog-bg:hover:before {
   justify-content: flex-end;
 }
 
-.sog-meta-text {
+.sog-meta-body {
   text-align: right;
+}
+
+.sog-meta-text {
   font-size: 0.875rem;
   line-height: 1.25rem;
   --tw-text-opacity: 1;
