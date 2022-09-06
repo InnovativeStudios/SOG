@@ -3,4 +3,5 @@ node_modules
 .old
 .output
 build
+dist
 out
