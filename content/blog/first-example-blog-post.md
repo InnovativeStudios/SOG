@@ -1,5 +1,5 @@
 ---
-title: 'Example Blog Post'
+title: 'First Example Blog Post'
 author: 'J. Schmidt'
 date: 2022-09-03
 image: 'https://via.placeholder.com/1920x1080'
