@@ -1,7 +1,27 @@
-version: "3"
+version: '3'
 services:
   website:
-    image: jschmidt92/sog
+    image: jschmidt92/sog:latest
     ports:
-      - "80:3000"
+      - '80:3000'
     restart: always
+  database:
+    image: mysql:latest
+    environment:
+      MYSQL_DATABASE: 'coopr_local'
+      MYSQL_USER: 'coopr'
+      MYSQL_PASSWORD: 'coopr'
+      MYSQL_ROOT_PASSWORD: 'svkhb5hj2'
+    ports:
+      - '3306:3306'
+    expose: 
+      - '3306'
+    volumes:
+      - ./mysql:/var/lib/mysql
+  phpmyadmin:
+    image: phpmyadmin:latest
+    ports:
+      - '8080:80'
+    environment:
+      PMA_HOST: database
+      PMA_PASSWORD: ${MYSQL_ROOT_PASSWORD}
