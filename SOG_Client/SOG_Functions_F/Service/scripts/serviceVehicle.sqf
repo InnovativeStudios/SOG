@@ -14,7 +14,7 @@
 
 params [("_veh"), "_vehKind"];
 _veh = _this select 0;
-_vehType = getText(configFile>>"CfgVehicles">>typeOf _veh>>"DisplayName");
+_vehType = getText(configFile >> "CfgVehicles" >> typeOf _veh >> "DisplayName");
 
 if ((_veh isKindOf _vehKind) && (driver _veh == player)) exitWith {
 
