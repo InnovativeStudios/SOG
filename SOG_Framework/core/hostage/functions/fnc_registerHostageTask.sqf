@@ -24,10 +24,10 @@
 	["task_name", "marker_name", 1, 2, false] call MF_hostage_fnc_registerHostageTask
 	
 	// CBRN Attack When Time Limit Expires
-	["task_name", "marker_name", 1, 2, false, false, [true, false], true, 45] call MF_hostage_fnc_registerHostageTask
+	["task_name", "marker_name", 1, 2, false, false, [true, false], true, 45] spawn MF_hostage_fnc_registerHostageTask
 	
 	// Execution When Time Limit Expires
-	["task_name", "marker_name", 1, 2, false, false, [false, true], true, 45] call MF_hostage_fnc_registerHostageTask
+	["task_name", "marker_name", 1, 2, false, false, [false, true], true, 45] spawn MF_hostage_fnc_registerHostageTask
 	
 	Returns:
 	void

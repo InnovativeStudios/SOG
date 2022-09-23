@@ -20,7 +20,7 @@ _pos = getPos _source;
 _sound0 = createSoundSource [_source, _pos, [], 0];
 
 if (!isNil _time) then {
-	sleep _time;
+	uiSleep _time;
 	deleteVehicle _sound0;
 };
 
