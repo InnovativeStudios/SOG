@@ -52,7 +52,7 @@ body {
 }
 
 .card {
-	@apply border-r border-b drop-shadow-sm prose prose-sm lg:prose-base prose-zinc prose-a:no-underline prose-img:!mt-0 max-w-none mb-4;
+	@apply border-r border-b drop-shadow-sm bg-white prose prose-sm lg:prose-base prose-zinc prose-a:no-underline prose-img:!mt-0 max-w-none mb-4;
 }
 .card-title {
 	@apply text-xl font-semibold hover:text-sky-400;

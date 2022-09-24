@@ -88,7 +88,7 @@ useHead ({
 				</aside>
 			</template>
 			<template #content>
-				<article class="card bg-white">
+				<article class="card">
 					<ClientOnly>
 						<ContentRenderer class="card-body prose prose-zinc" :value="knowledgebase">
 							<template #empty>

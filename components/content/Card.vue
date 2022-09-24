@@ -8,16 +8,34 @@ defineProps<{
 </script>
 
 <template>
-	<section class="border-r border-b shadow-sm bg-zinc-900 !h-40 p-3">
-		<article class="grid grid-flow-row grid-cols-1 lg:grid-cols-3 gap-3 items-center w-full h-full">
-			<component is="icon" class="col-span-1 text-center text-white" :class="icon" />
-			<div class="col-span-1 lg:col-span-2">
-				<p class="text-center text-gray-400 !text-xs sm:!text-sm md:!text-base lg:text-start">
-					<NuxtLink class="!text-sm sm:!text-base md:!text-xl lg:!text-2xl font-semibold !pl-0" :to="link">{{ title }}</NuxtLink>
-					<br>
-					{{ description }}
-				</p>
-			</div>
-		</article>
-	</section>
+	<article class="card card-feat">
+		<div class="card-body">
+			<component is="icon" :class="icon" />
+			<p class="card-text">
+				<NuxtLink :to="link">{{ title }}</NuxtLink>
+				{{ description }}
+			</p>
+		</div>
+	</article>
 </template>
+
+<style scoped lang="scss">
+.card {
+	@apply border-r border-b shadow-sm bg-zinc-900 h-40 max-h-40 mb-0;
+	&.card-feat {
+		@apply flex items-stretch;
+		.card-body {
+			@apply flex flex-1 flex-col lg:flex-row items-center justify-center gap-2 p-2;
+			icon {
+				@apply flex flex-row lg:basis-1/4 justify-center text-white;
+			}
+			.card-text {
+				@apply flex flex-col lg:basis-3/4 justify-end text-gray-400 text-center lg:text-start text-xs sm:text-sm md:text-base;
+				a {
+					@apply font-semibold text-sm sm:text-base md:text-xl lg:text-2xl pl-0;
+				}
+			}
+		}
+	}
+}
+</style>
