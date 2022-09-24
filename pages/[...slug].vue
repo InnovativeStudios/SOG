@@ -50,7 +50,7 @@ useHead ({
 	title: `${knowledgebase.value.title}`
 });
 </script>
-
+	
 <template>
 	<div>
 		<NuxtLayout name="wiki">
@@ -73,7 +73,7 @@ useHead ({
 				</aside>
 			</template>
 			<template #content>
-				<article class="card">
+				<article class="card bg-white">
 					<ClientOnly>
 						<ContentRenderer class="card-body prose prose-zinc" :value="knowledgebase">
 							<template #empty>
