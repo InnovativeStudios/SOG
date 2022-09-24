@@ -31,6 +31,21 @@ const wikiNav = [
 		target: ''
 	},
 	{
+		title: 'Getting Started',
+		link: '/knowledgebase/getting-started',
+		target: ''
+	},
+	{
+		title: 'About',
+		link: '/knowledgebase/about',
+		target: ''
+	},
+	{
+		title: 'Contributors',
+		link: '/knowledgebase/contributors',
+		target: ''
+	},
+	{
 		title: 'Framework',
 		link: '/knowledgebase/framework',
 		target: ''

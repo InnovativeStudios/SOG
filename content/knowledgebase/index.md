@@ -55,6 +55,9 @@ description: 'Example Loadouts'
 
 ## Links
 [Home](/knowledgebase) |
+[Getting Started](/knowledgebase/getting-started) |
+[About](/knowledgebase/about) |
+[Contributors](/knowledgebase/contributors) |
 [Framework](/knowledgebase/framework) |
 [Loadouts](/knowledgebase/loadout) |
 [Project Board](https://github.com/users/InnovativeStudios/projects/3/views/1)
