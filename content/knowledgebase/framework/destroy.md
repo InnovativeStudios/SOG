@@ -46,7 +46,7 @@ Example:
 	["task_name", 1, 2, false] call SOG_destroy_fnc_registerDestroyTask
 
 	// Destroy Within Time Limit
-	["task_name", 1, 2, false, false, true, 45] call SOG_destroy_fnc_registerDestroyTask
+	["task_name", 1, 2, false, false, true, 45] spawn SOG_destroy_fnc_registerDestroyTask
 ```
 
 ## Links

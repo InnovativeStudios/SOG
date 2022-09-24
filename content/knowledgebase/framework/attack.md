@@ -46,7 +46,7 @@ Example:
 	["task_name", 1, 2, false] call SOG_attack_fnc_registerAttackTask
 
 	// Attack Within Time Limit
-	["task_name", 1, 2, false, false, true, 45] call SOG_attack_fnc_registerAttackTask
+	["task_name", 1, 2, false, false, true, 45] spawn SOG_attack_fnc_registerAttackTask
 ```
 
 ## Links

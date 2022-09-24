@@ -51,10 +51,10 @@ Example:
 	["task_name", "marker_name", 1, 2, false, false, [false, true]] call SOG_hvt_fnc_registerHvtTask
 
 	// Capture Within Time Limit
-	["task_name", "marker_name", 1, 2, false, false, [true, false], true, 45] call SOG_hvt_fnc_registerHvtTask
+	["task_name", "marker_name", 1, 2, false, false, [true, false], true, 45] spawn SOG_hvt_fnc_registerHvtTask
 
 	// Eliminate Within Time Limit
-	["task_name", "marker_name", 1, 2, false, false, [false, true], true, 45] call SOG_hvt_fnc_registerHvtTask
+	["task_name", "marker_name", 1, 2, false, false, [false, true], true, 45] spawn SOG_hvt_fnc_registerHvtTask
 ```
 
 ## Links
