@@ -32,5 +32,5 @@ jobs:
         uses: actions/checkout@main
         
       - name: Lint (SQFLint)
-        uses: arma-actions/sqflint@main
+        uses: arma-actions/sqflint@master
         continue-on-error: true
