@@ -17,8 +17,7 @@ jobs:
       - name: Checkout the source code
         uses: actions/checkout@main
         with:
-          ref: development
-          token: ${{ secrets.ACTION_TOKEN }}
+          ref: main
           
       - name: Bump version
         id: bump-version
@@ -41,5 +40,3 @@ jobs:
         
       - name: Release Drafter
         uses: release-drafter/release-drafter@v5
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
