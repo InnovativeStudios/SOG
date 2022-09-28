@@ -18,6 +18,7 @@ jobs:
         uses: actions/checkout@master
         with:
           ref: master
+          token: ${{ secrets.ACTION_TOKEN }}
           
       - name: Bump version
         id: bump-version
