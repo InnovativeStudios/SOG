@@ -15,9 +15,9 @@ jobs:
     runs-on: ubuntu-latest 
     steps:
       - name: Checkout the source code
-        uses: actions/checkout@main
+        uses: actions/checkout@master
         with:
-          ref: main
+          ref: master
           
       - name: Bump version
         id: bump-version
