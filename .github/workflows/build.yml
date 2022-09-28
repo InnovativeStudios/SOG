@@ -6,10 +6,8 @@ on:
 			- master
 		paths-ignore:
 			- ".github/**"
-			- "docs/**"
 			- "SOG_Framework/core/main/script_version.hpp"
 			- "tools/**"
-			- ".editorconfig"
 			- ".gitignore"
 
 jobs:
