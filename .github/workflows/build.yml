@@ -1,26 +1,15 @@
 name: Build
 
 on:
-<<<<<<< HEAD
     push:
         branches:
-            - master
+            - development
         paths-ignore:
             - ".github/**"
             - "SOG_Framework/core/main/script_version.hpp"
             - "tools/**"
             - ".editorconfig"
             - ".gitignore"
-=======
-	push:
-		branches:
-			- master
-		paths-ignore:
-			- ".github/**"
-			- "SOG_Framework/core/main/script_version.hpp"
-			- "tools/**"
-			- ".gitignore"
->>>>>>> 14f5b18bbfb9d7641e064ae87a4353d2ee823cea
 
 jobs:
     build:
@@ -47,7 +36,6 @@ jobs:
                       LICENSE
                       README.md
 
-<<<<<<< HEAD
     draft-release:
         runs-on: ubuntu-latest
         steps:
@@ -58,9 +46,3 @@ jobs:
               uses: release-drafter/release-drafter@v5
               env:
                   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-=======
-			- name: Release Drafter
-				uses: release-drafter/release-drafter@v5
-				env:
-					GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
->>>>>>> 14f5b18bbfb9d7641e064ae87a4353d2ee823cea

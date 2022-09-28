@@ -3,10 +3,9 @@ name: Arma
 on:
 	push:
 		branches:
-			- master
+			- development
 		paths-ignore:
 			- ".github/**"
-			- "docs/**"
 			- "SOG_Framework/core/main/script_version.hpp"
 			- "tools/**"
 			- ".editorconfig"
