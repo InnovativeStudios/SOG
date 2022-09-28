@@ -2,7 +2,7 @@ name: Arma
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "development" ]
     paths-ignore:
       - ".github/**"
       - "SOG_Framework/core/main/script_version.hpp"
