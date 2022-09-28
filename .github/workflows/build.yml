@@ -1,7 +1,7 @@
 name: Build
 on:
   push:
-    branches: [ "development" ]
+    branches: [ "main" ]
     paths-ignore:
       - ".github/**"
       - "SOG_Framework/core/main/script_version.hpp"
@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest 
     steps:
       - name: Checkout the source code
-        uses: actions/checkout@development
+        uses: actions/checkout@main
         with:
           ref: development
           token: ${{ secrets.ACTION_TOKEN }}
