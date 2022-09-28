@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest 
     steps:
       - name: Checkout the source code
-        uses: actions/checkout@main
+#         uses: actions/checkout@main
         with:
           ref: development
           token: ${{ secrets.ACTION_TOKEN }}
