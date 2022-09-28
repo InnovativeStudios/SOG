@@ -1,7 +1,7 @@
 name: Build
 on:
   push:
-    branches: [ "development" ]
+    branches: [ "main" ]
     paths-ignore:
       - ".github/**"
       - "SOG_Framework/core/main/script_version.hpp"
@@ -15,10 +15,9 @@ jobs:
     runs-on: ubuntu-latest 
     steps:
       - name: Checkout the source code
-#         uses: actions/checkout@main
+        uses: actions/checkout@master
         with:
-          ref: development
-          token: ${{ secrets.ACTION_TOKEN }}
+          ref: main
           
       - name: Bump version
         id: bump-version
@@ -34,12 +33,12 @@ jobs:
             description.ext
             
   draft-release:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout the source code
-        uses: actions/checkout@v2
-        
-      - name: Release Drafter
-        uses: release-drafter/release-drafter@v5
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      runs-on: ubuntu-latest
+      steps:
+          - name: Checkout the source code
+            uses: actions/checkout@v2
+
+          - name: Release Drafter
+            uses: release-drafter/release-drafter@v5
+            env:
+              GITHUB_TOKEN: ${{ env.SOG_TOKEN }}
