@@ -1,7 +1,7 @@
 branches:
   - master
 
-name-template: "SOG_Framework_v$NEXT_PATCH_VERSION"
+name-template: "SOGFramework_v$NEXT_PATCH_VERSION"
 tag-template: "$NEXT_PATCH_VERSION"
 
 categories:
