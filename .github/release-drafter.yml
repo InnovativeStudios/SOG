@@ -1,33 +1,33 @@
 branches:
-	- master
+    - master
 
 name-template: "SOG_Framework_v$NEXT_PATCH_VERSION"
 tag-template: "$NEXT_PATCH_VERSION"
 
 categories:
-	- title: "**ADDED:**"
-		labels:
-			- "feature"
-	- title: "**FIXED:**"
-		labels:
-			- "bug fix"
-	- title: "**IMPROVED:**"
-		labels:
-			- "enhancement"
-	- title: "**CHANGED:**"
-		labels:
-			- "cleanup"
+    - title: "**ADDED:**"
+    labels:
+        - "feature"
+    - title: "**FIXED:**"
+    labels:
+        - "bug fix"
+    - title: "**IMPROVED:**"
+    labels:
+        - "enhancement"
+    - title: "**CHANGED:**"
+    labels:
+        - "cleanup"
 
 exclude-labels:
-	- "ignore changelog"
+    - "ignore changelog"
 
 change-template: "- $TITLE (#$NUMBER)"
 template: |
-	## Change Log Summary
+    ## Change Log Summary
 
-	$CHANGES
+    $CHANGES
 
 replacers:
-	# Category titles
-	- search: '/\#\# (\*\*(ADDED|FIXED|IMPROVED|CHANGED):\*\*)/g'
-		replace: "$1"
+    # Category titles
+    - search: '/\#\# (\*\*(ADDED|FIXED|IMPROVED|CHANGED):\*\*)/g'
+        replace: "$1"
