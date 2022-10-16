@@ -24,7 +24,7 @@
 	
 	Example:
 	// Capture No Time Limit
-	[1, [hvt1, hvt2], "t1", "mrk_extraction", 1, 2, false, false, [true, false]] call MF_hvt_fnc_checkTaskConditions
+	[1, [hvt1, hvt2], "t1", "mrk_extraction", 1, 2, false, false, [true, false]] call SOG_hvt_fnc_checkTaskConditions
 	
 	Returns:
 	void
@@ -46,7 +46,7 @@ if (_capture) then {
 	} count _hvts >= _limitFail) exitWith {
 		[_taskID, "FAILED"] call BFUNC(taskSetState);
 
-		// stop PFH
+		// Stop PFH
 		[_handle] call CFUNC(removePerFrameHandler);
 
 		// End the mission if it was enabled
@@ -78,7 +78,7 @@ if (_capture) then {
 			if (_time <= 0) exitWith {
 				[_taskID, "FAILED"] call BFUNC(taskSetState);
 
-				// stop PFH
+				// Stop PFH
 				[_handle] call CFUNC(removePerFrameHandler);
 
 				// End the mission if it was enabled
@@ -123,7 +123,7 @@ if (_eliminate) then {
 			if (_time <= 0) exitWith {
 				[_taskID, "FAILED"] call BFUNC(taskSetState);
 
-				// stop PFH
+				// Stop PFH
 				[_handle] call CFUNC(removePerFrameHandler);
 
 				// End the mission if it was enabled

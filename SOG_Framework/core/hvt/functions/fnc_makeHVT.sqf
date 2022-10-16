@@ -13,7 +13,7 @@
 	1: STRING - The ID of the task
 	
 	Example:
-	[this, "t1"] call MF_hvt_fnc_makeHVT
+	[this, "t1"] call SOG_hvt_fnc_makeHVT
 	
 	Returns:
 	void

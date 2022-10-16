@@ -1,5 +1,5 @@
 ---
-title: 'ArmA 3 SOG Server'
+title: 'ArmA 3 SOG Client Functions'
 ---
 
-# ArmA 3 SOG Server
+# ArmA 3 SOG Client Functions

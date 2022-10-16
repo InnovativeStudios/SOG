@@ -1,17 +1,16 @@
 /*
- * Name:	sog_fnc_ambientSound
- * Date:	8/6/2022
- * Version: 1.0
- * Author:  J. Schmidt
- *
- * Description:
- * Create a sound source and play an ambient sfx sound.
- *
- * Parameter(s):
- * 0: Object that the sound source will be created at. <OBJECT> 
- * 1: SFX sound that will play at object location. <STRING>
- * 2: Optional Amount of time before SFX sound will be deleted. <NUMBER>
- */
+	Name:	sog_fnc_spawnVictim
+	Date:	8/6/2022
+	Version: 1.0
+	Author:  J. Schmidt
+
+	Description:
+	Create victim, set victim position and apply random wound(s).
+
+	Parameter(s):
+	0: Victim that is created. <OBJECT> 
+	1: Type of wound(s). <STRING>
+*/
 
 params ["_object", "_typeOfWound"];
 {if ((typeOf _x == "victim0") && (!isPlayer _x)) then {deleteVehicle _x}} forEach allUnits;
@@ -40,7 +39,7 @@ removeBackpack victim0;
 removeHeadgear victim0;
 removeGoggles victim0;
 
-[victim0, _typeOfWound] call SOGCheckVictim;
-[victim0, ["End Practice Case", SOG_fnc_Medical, {[victim0] call SOGDeleteVictim}]] remoteExec ["addAction", 0];
+[victim0, _typeOfWound] call SOG_fnc_checkVictim;
+[victim0, ["End Practice Case", SOG_fnc_Medical, {[victim0] call SOG_fnc_deleteVictim}]] remoteExec ["addAction", 0];
 	
 hint 'Your Medical Training Dummy Is Ready';

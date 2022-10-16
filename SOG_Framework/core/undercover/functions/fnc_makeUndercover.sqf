@@ -13,7 +13,7 @@
 	1: STRING - The ID of the task
 	
 	Example:
-	[this, "task_name"] spawn MF_undercover_fnc_makeUndercover
+	[this, "task_name"] spawn SOG_undercover_fnc_makeUndercover
 	
 	Returns:
 	void

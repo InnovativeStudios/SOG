@@ -22,7 +22,7 @@
 	
 	Example:
 	// Default No Time Limit
-	[1, [undercover1, undercover2], "t1", 1, 2, false] call MF_undercover_fnc_checkTaskConditions
+	[1, [undercover1, undercover2], "t1", 1, 2, false] call SOG_undercover_fnc_checkTaskConditions
 	
 	Returns:
 	void
@@ -44,7 +44,7 @@ if (_timeLimit) then {
 		} count _undercover >= _limitFail) exitWith {
 			[_taskID, "FAILED"] call BFUNC(taskSetState);
 
-			// stop PFH
+			// Stop PFH
 			[_handle] call CFUNC(removePerFrameHandler);
 
 			// End the mission if it was enabled
