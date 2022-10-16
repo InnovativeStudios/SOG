@@ -30,4 +30,4 @@ template: |
 replacers:
     # Category titles
     - search: '/\#\# (\*\*(ADDED|FIXED|IMPROVED|CHANGED):\*\*)/g'
-        replace: "$1"
+    replace: "$1"
