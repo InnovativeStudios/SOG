@@ -22,7 +22,7 @@
 	
 	Example:
 	// Default No Time Limit
-	[1, [target1, target2], "t1", 1, 2, false] call MF_attack_fnc_checkTaskConditions
+	[1, [target1, target2], "t1", 1, 2, false] call SOG_attack_fnc_checkTaskConditions
 	
 	Returns:
 	void
@@ -44,7 +44,7 @@ if (_timeLimit) then {
 		} count _targets >= _limitFail) exitWith {
 			[_taskID, "FAILED"] call BFUNC(taskSetState);
 
-			// stop PFH
+			// Stop PFH
 			[_handle] call CFUNC(removePerFrameHandler);
 
 			// End the mission if it was enabled

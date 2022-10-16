@@ -22,7 +22,7 @@
 	
 	Example:
 	// Default No Time Limit
-	[1, [target1, target2], "t1", 1, 2, false] call MF_destroy_fnc_checkTaskConditions
+	[1, [target1, target2], "t1", 1, 2, false] call SOG_destroy_fnc_checkTaskConditions
 	
 	Returns:
 	void
@@ -38,36 +38,36 @@ if (_timeLimit) then {
 		_time = _time - 1;
 		sleep 1;
 
-		    // Check if time has exceeded and targets KIA
+		// Check if time has exceeded and targets KIA
 		if (_time <= 0 && {
 			alive _x
 		} count _targets >= _limitFail) exitWith {
 			[_taskID, "FAILED"] call BFUNC(taskSetState);
 
-			      // stop PFH
+			// Stop PFH
 			[_handle] call CFUNC(removePerFrameHandler);
 
-			      // End the mission if it was enabled
+			// End the mission if it was enabled
 			if (_endFail) then {
 				[QEGVAR(end_mission, callMission), ["MissionFail", true, playerSide]] call CFUNC(serverEvent);
 			};
 
-			      // Remove targets
+			// Remove targets
 			{
 				deleteVehicle _x
 			} forEach _targets;
 		};
 
-		    // If the task is failed, we don't check the task anymore to save performance
+		// If the task is failed, we don't check the task anymore to save performance
 		if (_taskID call BFUNC(taskState) == "FAILED") exitWith {};
 
-		    // Check the success limit
+		// Check the success limit
 		if ({
 			!alive _x
 		} count _targets >= _limitSuccess) exitWith {
 			[_taskID, "SUCCEEDED"] call BFUNC(taskSetState);
 
-			      // End the mission if it was enabled
+			// End the mission if it was enabled
 			if (_endSuccess) then {
 				[QEGVAR(end_mission, callMission), ["MissionSuccess", true, playerSide]] call CFUNC(serverEvent);
 			};
@@ -80,7 +80,7 @@ if (_timeLimit) then {
 	} count _targets >= _limitSuccess) exitWith {
 		[_taskID, "SUCCEEDED"] call BFUNC(taskSetState);
 
-		    // End the mission if it was enabled
+		// End the mission if it was enabled
 		if (_endSuccess) then {
 			[QEGVAR(end_mission, callMission), ["MissionSuccess", true, playerSide]] call CFUNC(serverEvent);
 		};

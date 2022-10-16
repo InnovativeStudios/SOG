@@ -10,7 +10,7 @@
 	
 	Arguments:
 	0: STRING - ID of the task
-	1: SCALAR - Number of undercover exposed to fail the task
+	1: SCALAR - Number of undercover exposed/killed to fail the task
 	2: SCALAR - Number of undercover exfiled to complete the task
 	4: BOOLEAN - Should the mission end (MissionSuccess) if the task is successful (Optional, default: false)
 	5: BOOLEAN - Should the mission end (MissionFailed) if the task is failed (Optional, default: false)
@@ -19,10 +19,10 @@
 	
 	Example:
 	// Default No Time Limit
-	["task_name", 1, 2, false] call MF_undercover_fnc_registerAttackTask
+	["task_name", 1, 2, false] call SOG_undercover_fnc_registerUndercoverTask
 	
-	// Attack Within Time Limit
-	["task_name", 1, 2, false, false, true, 45] call MF_undercover_fnc_registerAttackTask
+	// Undercover With Time Limit
+	["task_name", 1, 2, false, false, true, 45] call SOG_undercover_fnc_registerUndercoverTask
 	
 	Returns:
 	void
@@ -33,7 +33,7 @@ if !(isServer) exitWith {};
 params [["_taskID", ""], ["_limitFail", -1], ["_limitSuccess", -1], ["_endSuccess", false], ["_endFail", false], ["_timeLimit", false], ["_time", 45]];
 
 // Add a PFH to each task
-// Delay the PFH until mission start so every hostage is initialised
+// Delay the PFH until mission start so every undercover unit is initialised
 [QGVARMAIN(initFramework), {
 	_thisArgs params ["_taskID", "_limitFail", "_limitSuccess", "_endSuccess", "_endFail", "_timeLimit", "_time"];
 
@@ -48,7 +48,7 @@ params [["_taskID", ""], ["_limitFail", -1], ["_limitSuccess", -1], ["_endSucces
 		], true, 0] call EFUNC(main, log);
 	};
 
-	// get the undercover
+	// Get the undercover units
 	private _undercover = GVAR(allUndercover) select {
 		GETVAR(_x, GVAR(assignedTask), "") == _taskID
 	};

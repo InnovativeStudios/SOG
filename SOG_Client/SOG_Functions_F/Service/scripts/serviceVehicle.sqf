@@ -1,16 +1,16 @@
 /*
- * Name:	sog_fnc_serviceVehicle
- * Date:	8/6/2022
- * Version: 1.0
- * Author:  J. Schmidt
- *
- * Description:
- * Create a sound source and play an ambient sfx sound.
- *
- * Parameter(s):
- * 0: Vehicle that is being repaired. <OBJECT> 
- * 1: Type of vehicle that is being repaired. <STRING>
- */
+	Name:	sog_fnc_serviceVehicle
+	Date:	8/6/2022
+	Version: 1.0
+	Author:  J. Schmidt
+
+	Description:
+	Check type of vehicle and provide appropriate service.
+
+	Parameter(s):
+	0: Vehicle that is being repaired. <OBJECT> 
+	1: Type of vehicle that is being repaired. <STRING>
+*/
 
 params [("_veh"), "_vehKind"];
 _veh = _this select 0;

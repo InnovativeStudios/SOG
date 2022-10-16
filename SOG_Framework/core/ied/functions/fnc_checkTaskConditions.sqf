@@ -19,7 +19,7 @@
 	7: BOOLEAN - Should the mission end (MissionFailed) if the task is failed (Optional, default: false)
 	
 	Example:
-	[2, [obj1, obj2, obj3], [ied1, ied2, ied3], 2, 3, true] call MF_ied_fnc_checkTaskConditions
+	[2, [obj1, obj2, obj3], [ied1, ied2, ied3], 2, 3, true] call SOG_ied_fnc_checkTaskConditions
 	
 	Returns:
 	void
@@ -35,7 +35,7 @@ if ({
 } count _objects >= _limitFail) exitWith {
 	[_taskID, "FAILED"] call BFUNC(taskSetState);
 
-	// stop PFH
+	// Stop PFH
 	[_handle] call CFUNC(removePerFrameHandler);
 
 	// End the mission if it was enabled

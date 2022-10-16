@@ -52,7 +52,7 @@ private _delete = _intel#3;
 private _share = _intel#4;
 private _iconPath = format ["\a3\ui_f\data\IGUI\Cfg\holdactions\%1.paa", _icon];
 
-// set a global variable that we can use in triggers
+// Set a global variable that we can use in triggers
 private _intelID = format ["MF_intel_ID_%1", _id];
 missionNamespace setVariable [_intelID, false, true];
 
@@ -77,7 +77,7 @@ missionNamespace setVariable [_intelID, false, true];
 			[QGVAR(notification_2), ["IntelAdded", format ["Intel: %1", _title]]] call CFUNC(localEvent);
 		};
 
-		// set global variable for triggers
+		// Set global variable for triggers
 		missionNamespace setVariable [_intelID, true, true];
 
 		if (_delete) then {

@@ -16,7 +16,7 @@
 	4: BOOLEAN - Should the mission end (MissionFailed) if the task is failed (Optional, default: false)
 	
 	Example:
-	["task_name", 2, 3, false] call MF_ied_fnc_registerDiffuseTask
+	["task_name", 2, 3, false] call SOG_ied_fnc_registerDiffuseTask
 	
 	Returns:
 	void
@@ -48,12 +48,12 @@ params [["_taskID", ""], ["_limitFail", -1], ["_limitSuccess", -1], ["_endSucces
 		], true, 0] call EFUNC(main, log);
 	};
 
-	// get the ieds
+	// Get the ieds
 	private _ieds = GVAR(allIEDs) select {
 		GETVAR(_x, GVAR(assignedTask), "") == _taskID
 	};
 
-	// get the objects
+	// Get the objects
 	private _objects = GVAR(allObjects) select {
 		GETVAR(_x, GVAR(assignedTask), "") == _taskID
 	};

@@ -1,10 +1,10 @@
 // DO NOT EDIT (unless you know what you are doing)
-// To access the basic settings open the description.hpp in 'SOGFramework\config\'
+// To access the basic settings open the description.hpp in 'SOG_Framework\config\'
 
-#include "SOGFramework\core\main\script_macros.hpp"
+#include "SOG_Framework\core\main\script_macros.hpp"
 
 // Importing the custom settings
-#include "SOGFramework\config\description.hpp"
+#include "SOG_Framework\config\description.hpp"
 __EXEC(MF_missionMaker = UID;)
 
 // Respawn settings
@@ -43,16 +43,16 @@ taskManagement_propagate = 0;  // Propagate shared tasks to subordinates
 onPauseScript[] = {QEFUNC(admin,onPause)};
 
 // Debriefing config
-#include "SOGFramework\core\main\CfgDebriefing.hpp"
+#include "SOG_Framework\core\main\CfgDebriefing.hpp"
 
 // Notifications config
-#include "SOGFramework\core\main\CfgNotifications.hpp"
+#include "SOG_Framework\core\main\CfgNotifications.hpp"
 
 // CBA Event handlers
-#include "SOGFramework\core\main\CfgEventHandlers.hpp"
+#include "SOG_Framework\core\main\CfgEventHandlers.hpp"
 
 // Custom sounds
-#include "SOGFramework\core\main\CfgSounds.hpp"
+#include "SOG_Framework\core\main\CfgSounds.hpp"
 
 // RscTitles
-#include "SOGFramework\core\main\RscTitles.hpp"
+#include "SOG_Framework\core\main\RscTitles.hpp"

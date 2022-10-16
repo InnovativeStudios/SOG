@@ -1,16 +1,15 @@
 /*
- * Name:	sog_fnc_serviceVehicle
- * Date:	8/6/2022
- * Version: 1.0
- * Author:  J. Schmidt
- *
- * Description:
- * Create a sound source and play an ambient sfx sound.
- *
- * Parameter(s):
- * 0: Vehicle that is being repaired. <OBJECT> 
- * 1: Type of vehicle that is being repaired. <STRING>
- */
+	Name:	sog_fnc_checkRain
+	Date:	8/6/2022
+	Version: 1.0
+	Author:  J. Schmidt
+
+	Description:
+	Check if there is rain and do something.
+
+	Parameter(s):
+	Null
+*/
 
 _rainLevel = rain;
 waituntil {(_rainLevel > 0)};

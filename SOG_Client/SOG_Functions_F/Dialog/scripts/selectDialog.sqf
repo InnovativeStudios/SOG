@@ -1,16 +1,16 @@
 /*
- * Name:	sog_fnc_dialog
- * Date:	8/6/2022
- * Version: 1.0
- * Author:  J. Schmidt
- *
- * Description:
- * Create a sound source and play an ambient sfx sound.
- *
- * Parameter(s):
- * 0: Vehicle that is being repaired. <OBJECT> 
- * 1: Type of vehicle that is being repaired. <STRING>
- */
+	Name:	sog_fnc_selectDialog
+	Date:	8/6/2022
+	Version: 1.0
+	Author:  J. Schmidt
+
+	Description:
+	Create dialog for AI unit.
+
+	Parameter(s):
+	0: The AI unit. <OBJECT>
+	1: The dialog to be used. <STRING>
+*/
 
 params ["_units", "_dialog"];
 {

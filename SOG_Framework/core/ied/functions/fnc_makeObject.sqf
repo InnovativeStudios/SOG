@@ -13,7 +13,7 @@
 	1: STRING - The ID of the task
 	
 	Example:
-	[this, "task_name"] call MF_ied_fnc_makeObject
+	[this, "task_name"] call SOG_ied_fnc_makeObject
 	
 	Returns:
 	void

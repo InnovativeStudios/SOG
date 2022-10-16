@@ -25,7 +25,7 @@
 	
 	Example:
 	// Default No Time Limit
-	[1, [pow1, pow2], "t1", "mrk_extraction", 1, 2, false] call MF_hostage_fnc_checkTaskConditions
+	[1, [pow1, pow2], "t1", "mrk_extraction", 1, 2, false] call SOG_hostage_fnc_checkTaskConditions
 	
 	Returns:
 	void
@@ -45,7 +45,7 @@ if ({
 } count _hostages >= _limitFail) exitWith {
 	[_taskID, "FAILED"] call BFUNC(taskSetState);
 
-	// stop PFH
+	// Stop PFH
 	[_handle] call CFUNC(removePerFrameHandler);
 
 	// End the mission if it was enabled

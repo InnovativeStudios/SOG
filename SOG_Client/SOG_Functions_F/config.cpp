@@ -8,7 +8,7 @@ class CfgPatches {
 };
 
 class CfgFunctions {
-  class SOG_Client {
+  class SOG {
     class Ambient {
       class ambientSound {
         file = "\SOG_Client\SOG_Funtions_F\Ambient\scripts\ambientSound.sqf";

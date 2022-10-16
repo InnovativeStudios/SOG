@@ -19,10 +19,10 @@
 	
 	Example:
 	// Default No Time Limit
-	["task_name", 1, 2, false] call MF_attack_fnc_registerAttackTask
+	["task_name", 1, 2, false] call SOG_attack_fnc_registerAttackTask
 	
 	// Attack Within Time Limit
-	["task_name", 1, 2, false, false, true, 45] call MF_attack_fnc_registerAttackTask
+	["task_name", 1, 2, false, false, true, 45] call SOG_attack_fnc_registerAttackTask
 	
 	Returns:
 	void
@@ -37,7 +37,7 @@ params [["_taskID", ""], ["_limitFail", -1], ["_limitSuccess", -1], ["_endSucces
 [QGVARMAIN(initFramework), {
 	_thisArgs params ["_taskID", "_limitFail", "_limitSuccess", "_endSuccess", "_endFail", "_timeLimit", "_time"];
 
-	    // Check stuff
+	// Check stuff
 	if !([_taskID] call BFUNC(taskExists)) then {
 		[COMPONENT_STR, "DEBUG", format ["Task (%1) does not exist", _taskID], true, 0] call EFUNC(main, log);
 	};
@@ -48,17 +48,17 @@ params [["_taskID", ""], ["_limitFail", -1], ["_limitSuccess", -1], ["_endSucces
 		], true, 0] call EFUNC(main, log);
 	};
 
-	    // get the targets
+	// Get the targets
 	private _targets = GVAR(allTargets) select {
 		GETVAR(_x, GVAR(assignedTask), "") == _taskID
 	};
 
-	    // PFH
+	// PFH
 	private _handle = [{
 		_this#0 params ["_targets", "_taskID", "_limitFail", "_limitSuccess", "_endSuccess", "_endFail", "_timeLimit", "_time"];
 		_this#1 params ["_handle"];
 
-		        // Check function
+		// Check function
 		[_handle, _targets, _taskID, _limitFail, _limitSuccess, _endSuccess, _endFail, _timeLimit, _time] spawn FUNC(checkTaskConditions);
 	}, 3, [_targets, _taskID, _limitFail, _limitSuccess, _endSuccess, _endFail, _timeLimit, _time]] spawn CFUNC(addPerFrameHandler);
 }, [_taskID, _limitFail, _limitSuccess, _endSuccess, _endFail, _timeLimit, _time]] spawn CFUNC(addEventHandlerArgs);

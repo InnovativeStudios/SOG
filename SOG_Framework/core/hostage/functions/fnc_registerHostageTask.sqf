@@ -21,13 +21,13 @@
 	
 	Example:
 	// Default No Time Limit
-	["task_name", "marker_name", 1, 2, false] call MF_hostage_fnc_registerHostageTask
+	["task_name", "marker_name", 1, 2, false] call SOG_hostage_fnc_registerHostageTask
 	
 	// CBRN Attack When Time Limit Expires
-	["task_name", "marker_name", 1, 2, false, false, [true, false], true, 45] spawn MF_hostage_fnc_registerHostageTask
+	["task_name", "marker_name", 1, 2, false, false, [true, false], true, 45] spawn SOG_hostage_fnc_registerHostageTask
 	
 	// Execution When Time Limit Expires
-	["task_name", "marker_name", 1, 2, false, false, [false, true], true, 45] spawn MF_hostage_fnc_registerHostageTask
+	["task_name", "marker_name", 1, 2, false, false, [false, true], true, 45] spawn SOG_hostage_fnc_registerHostageTask
 	
 	Returns:
 	void
@@ -57,12 +57,12 @@ params [["_taskID", ""], ["_extZone", ""], ["_limitFail", -1], ["_limitSuccess",
 		], true, 0] call EFUNC(main, log);
 	};
 
-	// get the hostages
+	// Get the hostages
 	private _hostages = GVAR(allHostages) select {
 		GETVAR(_x, GVAR(assignedTask), "") == _taskID
 	};
 
-	// get the shooters
+	// Get the shooters
 	private _shooters = GVAR(allShooters) select {
 		GETVAR(_x, GVAR(assignedTask), "") == _taskID
 	};
